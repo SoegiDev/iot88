@@ -1,0 +1,18 @@
+INFO 2025-04-15 12:58:43,982 Info -cls=create_login|args=()|kwargs={'username': 'mistersoegi', 'password': 'pass12345!'}|Result={"code":200,"data":{"device":[{"category":"","created_by":"monicaigun","created_date":"04-11-2025 20:43:38","deleted":false,"device_id":"02198321321312","device_name":"","gsm_connect":false,"id":"1120-4340-e6abcdbb-c7df-43e3-acb0-c4162fc5e27a","ip_address":"0.0.0.0","key":"24T00V1NYO","last_updated":"04-12-2025 19:50:56","live_date":"04-11-2025 20:43:38","live_end":"04-11-2025 20:43:38","location":"device_location","model":"","s_api":0,"s_asap":0,"s_cahaya":0,"s_gerak":0,"server":"0.0.0.0","server_connected":false,"status":0,"type":"","user_connected":true,"user_owner":"mistersoegi","user_remote":false,"user_view":false,"wifi_connect":false}],"email":"mistersoegi@gmail.com","get_data":null,"id":"202504-1121-1722-d2e98a9d-6365-4a29-b048-bc940fa9d443","last_updated":"04-15-2025 12:58:33","password":[{"password":"gAAAAABn-SRy9Y1qTNCIkBKBZk3HpMKXx_Yokr63lghENi2S4bdXbWON2xUDzgKb2s5D1dMGMavxSs7hfg4ZkCCmQTHYwrDdjQ==","primary":true}],"role":"user","username":"mistersoegi"},"message":"Successfully Login"}
+-
+INFO 2025-04-15 12:59:10,883 Info -cls=create_admin_login|args=()|kwargs={'username': 'monicaigun', 'password': 'pass123!'}|Result={"code":200,"data":{"email":"monicaigun@gmail.com","id":"202504-1119-5020-0e41c8ad-e9c4-40f0-8918-463976992b28","password":[{"password":"gAAAAABn-RAMonam5aSQyZXmaNlAa4w12ICQqYlgiEOepgAB2Din2JVZxp-mPeHutsRMqbi01wXjfwva4OCKxIQmBA8c1uVNWw==","primary":false},{"password":"gAAAAABn-RParMu5nUECh_rO9adD07qt3WFDidYCGh1shH2uzcu7lc04M5VGd9ZIsMomp_4XmO1Qt4bwY1cZYZQWcACY60DC4g==","primary":true}],"role":"admin","username":"monicaigun"},"message":"Successfully Login"}
+-
+ERROR 2025-04-15 13:10:29,866 Error -cls=create_get_device_admin|Result=Expecting value: line 1 column 1 (char 0)|Exception=JSONDecodeError('Expecting value: line 1 column 1 (char 0)')- 
+Traceback (most recent call last):
+  File "D:\iot\backend\v1\decorators\silvia_log.py", line 58, in wrapper
+    kwargs_params = json.loads(request.data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python312\Lib\json\__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python312\Lib\json\decoder.py", line 338, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python312\Lib\json\decoder.py", line 356, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)

@@ -1,0 +1,166 @@
+INFO 2025-04-07 15:51:10,681 Info -cls=login_user|args=({'username': 'fajarsoegi', 'password': 'pass123!'},)|kwargs={}|Result=<Response 181 bytes [200 OK]>-
+INFO 2025-04-07 16:00:26,525 Info -cls=login_user|args=({'username': 'fajarsoegi', 'password': 'pass123!'},)|kwargs={}|Result=<Response 181 bytes [200 OK]>-
+INFO 2025-04-07 16:01:18,985 Info -cls=create_login|args=()|kwargs={}|Result=<Response 181 bytes [200 OK]>-
+INFO 2025-04-07 16:01:56,511 Info -cls=create_login|args=()|kwargs={}|Result=<Response 41 bytes [400 BAD REQUEST]>-
+INFO 2025-04-07 16:31:00,595 Info -cls=create_login|args=()|kwargs={}|Result=<Response 41 bytes [400 BAD REQUEST]>-
+INFO 2025-04-07 16:31:30,806 Info -cls=create_login|args=()|kwargs={}|Result=<Response 181 bytes [200 OK]>-
+INFO 2025-04-07 16:32:27,904 Info -cls=create_login|args=()|kwargs={}|Result=<Response 181 bytes [200 OK]>-
+INFO 2025-04-07 16:33:09,322 Info -cls=create_login|args=()|kwargs={}|Result=<Response 181 bytes [200 OK]>-
+INFO 2025-04-07 16:34:46,260 Info -cls=create_login|args=()|kwargs={}|Result=<Response 181 bytes [200 OK]>-
+INFO 2025-04-07 16:35:43,879 Info -cls=create_login|args=()|kwargs={}|Result=<Response 181 bytes [200 OK]>-
+INFO 2025-04-07 16:37:01,540 Info -cls=create_login|args=()|kwargs={}|Result=<Response 181 bytes [200 OK]>-
+INFO 2025-04-07 16:37:09,939 Info -cls=create_login|args=()|kwargs={}|Result=<Response 41 bytes [400 BAD REQUEST]>-
+INFO 2025-04-07 16:38:28,528 Info -cls=login_user|args=({'username': 'fajarsoegi', 'password': 'pass123!'},)|kwargs={}|Result=<Response 181 bytes [200 OK]>-
+INFO 2025-04-07 16:49:09,990 Info -cls=create_login|args=()|kwargs={}|Result=<Response 41 bytes [400 BAD REQUEST]>-
+INFO 2025-04-07 16:50:25,884 Info -cls=create_login|args=()|kwargs={}|Result=<Response 41 bytes [400 BAD REQUEST]>-
+INFO 2025-04-07 16:56:48,942 Info -cls=create_login|args=()|kwargs={}|Result=<Response 41 bytes [400 BAD REQUEST]>-
+ERROR 2025-04-07 16:59:00,482 Error -cls=create_login|Result='dict' object is not callable|Exception=TypeError("'dict' object is not callable")- 
+Traceback (most recent call last):
+  File "D:\iot\backend\v1\decorators\silvia_log.py", line 59, in wrapper
+    pars_param = parameter.json()
+                 ^^^^^^^^^^^^^^^^
+TypeError: 'dict' object is not callable
+ERROR 2025-04-07 17:00:53,976 Error -cls=create_login|Result='Response' object has no attribute 'content'|Exception=AttributeError("'Response' object has no attribute 'content'")- 
+Traceback (most recent call last):
+  File "D:\iot\backend\v1\decorators\silvia_log.py", line 59, in wrapper
+    pars_param = parameter.content
+                 ^^^^^^^^^^^^^^^^^
+AttributeError: 'Response' object has no attribute 'content'
+INFO 2025-04-07 17:01:23,942 Info -cls=create_login|args=()|kwargs={}|Result=<Response 41 bytes [400 BAD REQUEST]>-
+ERROR 2025-04-07 17:03:48,328 Error -cls=create_login|Result='Response' object has no attribute 'text'|Exception=AttributeError("'Response' object has no attribute 'text'")- 
+Traceback (most recent call last):
+  File "D:\iot\backend\v1\decorators\silvia_log.py", line 59, in wrapper
+    pars_param = json.loads(parameter.text)
+                            ^^^^^^^^^^^^^^
+AttributeError: 'Response' object has no attribute 'text'
+ERROR 2025-04-07 17:06:04,449 Error -cls=create_login|Result='Response' object is not subscriptable|Exception=TypeError("'Response' object is not subscriptable")- 
+Traceback (most recent call last):
+  File "D:\iot\backend\v1\decorators\silvia_log.py", line 59, in wrapper
+    pars_param = parameter['status']
+                 ~~~~~~~~~^^^^^^^^^^
+TypeError: 'Response' object is not subscriptable
+ERROR 2025-04-07 17:08:05,564 Error -cls=create_login|Result='Response' object is not subscriptable|Exception=TypeError("'Response' object is not subscriptable")- 
+Traceback (most recent call last):
+  File "D:\iot\backend\v1\decorators\silvia_log.py", line 59, in wrapper
+    pars_param = parameter[0]['status']
+                 ~~~~~~~~~^^^
+TypeError: 'Response' object is not subscriptable
+INFO 2025-04-07 17:08:25,679 Info -cls=create_login|args=()|kwargs={}|Result=<Response 41 bytes [400 BAD REQUEST]>-
+INFO 2025-04-07 17:12:11,805 Info -cls=create_login|args=()|kwargs={}|Result=<Response 41 bytes [400 BAD REQUEST]>-
+INFO 2025-04-07 17:16:29,172 Info -cls=create_login|args=()|kwargs={}|Result=<Response 41 bytes [400 BAD REQUEST]>-
+INFO 2025-04-07 17:20:21,732 Info -cls=create_login|args=()|kwargs={}|Result=<Response 41 bytes [400 BAD REQUEST]>-
+INFO 2025-04-07 17:21:13,452 Info -cls=create_login|args=()|kwargs={}|Result=<Response 41 bytes [400 BAD REQUEST]>-
+INFO 2025-04-07 17:23:29,665 Info -cls=create_login|args=()|kwargs={}|Result=<Response 41 bytes [400 BAD REQUEST]>-
+INFO 2025-04-07 17:24:06,959 Info -cls=create_login|args=()|kwargs={}|Result=<Response 41 bytes [400 BAD REQUEST]>-
+INFO 2025-04-07 17:24:22,268 Info -cls=create_login|args=()|kwargs={}|Result=<Response 41 bytes [400 BAD REQUEST]>-
+ERROR 2025-04-07 17:24:48,291 Error -cls=create_login|Result='bytes' object has no attribute 'read'|Exception=AttributeError("'bytes' object has no attribute 'read'")- 
+Traceback (most recent call last):
+  File "D:\iot\backend\v1\decorators\silvia_log.py", line 53, in wrapper
+    print(json.load(request.data))
+          ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python312\Lib\json\__init__.py", line 293, in load
+    return loads(fp.read(),
+                 ^^^^^^^
+AttributeError: 'bytes' object has no attribute 'read'
+INFO 2025-04-07 17:25:29,118 Info -cls=create_login|args=()|kwargs={}|Result=<Response 41 bytes [400 BAD REQUEST]>-
+INFO 2025-04-07 17:26:17,896 Info -cls=create_login|args=()|kwargs={}|Result=<Response 41 bytes [400 BAD REQUEST]>-
+INFO 2025-04-07 17:26:48,123 Info -cls=create_login|args=()|kwargs={}|Result=<Response 41 bytes [400 BAD REQUEST]>-
+INFO 2025-04-07 17:27:42,439 Info -cls=create_login|args=()|kwargs={}|Result=<Response 41 bytes [400 BAD REQUEST]>-
+ERROR 2025-04-07 17:28:12,615 Error -cls=create_login|Result=create_login() got an unexpected keyword argument 'username'|Exception=TypeError("create_login() got an unexpected keyword argument 'username'")- 
+Traceback (most recent call last):
+  File "D:\iot\backend\v1\decorators\silvia_log.py", line 55, in wrapper
+    resuls_function = func(*args,**kwargs)
+                      ^^^^^^^^^^^^^^^^^^^^
+TypeError: create_login() got an unexpected keyword argument 'username'
+ERROR 2025-04-07 17:28:15,585 Error -cls=create_login|Result=create_login() got an unexpected keyword argument 'username'|Exception=TypeError("create_login() got an unexpected keyword argument 'username'")- 
+Traceback (most recent call last):
+  File "D:\iot\backend\v1\decorators\silvia_log.py", line 55, in wrapper
+    resuls_function = func(*args,**kwargs)
+                      ^^^^^^^^^^^^^^^^^^^^
+TypeError: create_login() got an unexpected keyword argument 'username'
+ERROR 2025-04-07 17:30:09,530 Error -cls=create_login|Result='dict' object is not callable|Exception=TypeError("'dict' object is not callable")- 
+Traceback (most recent call last):
+  File "D:\iot\backend\v1\decorators\silvia_log.py", line 54, in wrapper
+    kwargs = request.json()
+             ^^^^^^^^^^^^^^
+TypeError: 'dict' object is not callable
+INFO 2025-04-07 17:31:45,434 Info -cls=create_login|args=()|kwargs={'username': 'fajarsoegi'}|Result=<Response 41 bytes [400 BAD REQUEST]>-
+ERROR 2025-04-07 17:34:32,977 Error -cls=create_login|Result=TypeConversionDict.get() missing 1 required positional argument: 'key'|Exception=TypeError("TypeConversionDict.get() missing 1 required positional argument: 'key'")- 
+Traceback (most recent call last):
+  File "D:\iot\backend\v1\decorators\silvia_log.py", line 60, in wrapper
+    args_params = request.args.get()
+                  ^^^^^^^^^^^^^^^^^^
+TypeError: TypeConversionDict.get() missing 1 required positional argument: 'key'
+INFO 2025-04-07 17:35:15,700 Info -cls=create_login|args=None|kwargs={'username': 'fajarsoegi'}|Result=<Response 41 bytes [400 BAD REQUEST]>-
+INFO 2025-04-07 17:41:48,480 Info -cls=create_login|args=()|kwargs={'username': 'fajarsoegi'}|Result=<Response 41 bytes [400 BAD REQUEST]>-
+INFO 2025-04-07 17:42:40,574 Info -cls=create_login|args=()|kwargs={'username': 'fajarsoegi'}|Result=<Response 41 bytes [400 BAD REQUEST]>-
+INFO 2025-04-07 17:43:16,396 Info -cls=create_login|args=()|kwargs={'username': 'fajarsoegi'}|Result=<Response 41 bytes [400 BAD REQUEST]>-
+ERROR 2025-04-07 17:45:18,458 Error -cls=create_login|Result='Response' object has no attribute 'content'|Exception=AttributeError("'Response' object has no attribute 'content'")- 
+Traceback (most recent call last):
+  File "D:\iot\backend\v1\decorators\silvia_log.py", line 64, in wrapper
+    Hasil = results_function.content
+            ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Response' object has no attribute 'content'
+INFO 2025-04-07 17:45:34,709 Info -cls=create_login|args=()|kwargs={'username': 'fajarsoegi'}|Result=400-
+INFO 2025-04-07 17:46:46,482 Info -cls=create_login|args=()|kwargs={'username': 'fajarsoegi'}|Result=b'{"message":"Password Field Must Filled"}\n'-
+INFO 2025-04-07 17:48:51,316 Info -cls=create_login|args=()|kwargs={'username': 'fajarsoegi'}|Result=b'{"code":400,"message":"Password Field Must Filled"}\n'-
+INFO 2025-04-07 17:49:31,399 Info -cls=create_login|args=()|kwargs={'username': 'fajarsoegi'}|Result={"code":400,"message":"Password Field Must Filled"}
+-
+INFO 2025-04-07 17:49:47,962 Info -cls=create_login|args=()|kwargs={'username': 'fajarsoegi', 'password': 'pass123!'}|Result={"code":200,"data":{"device":[],"email":"fajarsoegi@gmail.com","id":"202504-0515-5633-812babad-690f-4af9-a971-eee9bccc9667","username":"fajarsoegi"},"message":"Successfully Login"}
+-
+INFO 2025-04-07 18:01:16,305 Info -cls=create_login|args=()|kwargs={'username': 'fajarsoegi', 'password': 'pass123!'}|Result={"code":200,"data":{"device":[],"email":"fajarsoegi@gmail.com","id":"202504-0515-5633-812babad-690f-4af9-a971-eee9bccc9667","username":"fajarsoegi"},"message":"Successfully Login"}
+-
+WARNING 2025-04-07 18:01:23,535 Info -cls=create_login|args=()|kwargs={'username': 'fajarsoegi'}|Result={"code":400,"message":"Password Field Must Filled"}
+-
+INFO 2025-04-07 18:01:23,536 Info -cls=create_login|args=()|kwargs={'username': 'fajarsoegi'}|Result={"code":400,"message":"Password Field Must Filled"}
+-
+WARNING 2025-04-07 18:04:16,015 Info -cls=create_login|args=()|kwargs={'username': 'fajarsoegi'}|Result={"code":400,"message":"Password Field Must Filled"}
+-
+INFO 2025-04-07 18:04:16,017 Info -cls=create_login|args=()|kwargs={'username': 'fajarsoegi'}|Result={"code":400,"message":"Password Field Must Filled"}
+-
+WARNING 2025-04-07 18:04:57,828 Info -cls=create_login|args=()|kwargs={'username': 'fajarsoegi'}|Result={"code":400,"message":"Password Field Must Filled"}
+-
+INFO 2025-04-07 18:06:29,705 Info -cls=create_login|args=()|kwargs={'username': 'fajarsoegi', 'password': 'pass123!'}|Result={"code":200,"data":{"device":[],"email":"fajarsoegi@gmail.com","id":"202504-0515-5633-812babad-690f-4af9-a971-eee9bccc9667","username":"fajarsoegi"},"message":"Successfully Login"}
+-
+WARNING 2025-04-07 18:11:35,881 Info -cls=create_register|args=()|kwargs={'username': 'fajarsoegi', 'password': 'pass12345!', 'email': 'fajarsoegi@gmail.com'}|Result={"code":400,"message":"User Already Exists"}
+-
+WARNING 2025-04-07 18:12:33,543 Info -cls=create_register|args=()|kwargs={'username': 'mistersoegi', 'password': 'pass12345!', 'email': 'mistersoegi@gmail.com'}|Result={"code":201,"message":"Successfully Registered"}
+-
+WARNING 2025-04-07 18:14:14,778 Info -cls=create_register|args=()|kwargs={'username': 'mistersoegi', 'password': 'pass12345!', 'email': 'mistersoegi@gmail.com'}|Result={"code":400,"message":"User Already Exists"}
+-
+WARNING 2025-04-07 18:14:20,459 Info -cls=create_login|args=()|kwargs={'username': 'fajarsoegi', 'password': 'pass123!'}|Result={"code":400,"message":"User is not found"}
+-
+WARNING 2025-04-07 18:14:36,994 Info -cls=create_register|args=()|kwargs={'username': 'monicaigun', 'password': 'pass12345!', 'email': 'monicaigun@gmail.com'}|Result={"code":201,"message":"Successfully Registered"}
+-
+WARNING 2025-04-07 18:16:30,821 Info -cls=create_register|args=()|kwargs={'username': 'monicaigun', 'password': 'pass12345!', 'email': 'monicaigun@gmail.com'}|Result={"code":201,"message":"Successfully Registered"}
+-
+WARNING 2025-04-07 18:17:30,919 Info -cls=create_register|args=()|kwargs={'username': 'monicaigun', 'password': 'pass12345!', 'email': 'monicaigun@gmail.com'}|Result={"code":201,"message":"Successfully Registered"}
+-
+INFO 2025-04-07 18:18:28,261 Info -cls=create_register|args=()|kwargs={'username': 'monicaigun', 'password': 'pass12345!', 'email': 'monicaigun@gmail.com'}|Result={"code":201,"message":"Successfully Registered"}
+-
+WARNING 2025-04-07 18:18:33,784 Info -cls=create_login|args=()|kwargs={'username': 'fajarsoegi', 'password': 'pass123!'}|Result={"code":400,"message":"User is not found"}
+-
+WARNING 2025-04-07 18:18:38,011 Info -cls=create_login|args=()|kwargs={'username': 'fajarsoegi', 'password': 'pass123!'}|Result={"code":400,"message":"User is not found"}
+-
+WARNING 2025-04-07 18:19:03,638 Info -cls=create_login|args=()|kwargs={'username': 'fajarsoegi', 'password': 'pass12345!'}|Result={"code":400,"message":"User is not found"}
+-
+WARNING 2025-04-07 18:19:29,037 Info -cls=create_login|args=()|kwargs={'username': 'fajarsoegi', 'password': 'pass123!'}|Result={"code":400,"message":"User is not found"}
+-
+INFO 2025-04-07 18:19:50,235 Info -cls=create_register|args=()|kwargs={'username': 'fajarsoegi', 'password': 'pass12345!', 'email': 'fajarsoegi@gmail.com'}|Result={"code":201,"message":"Successfully Registered"}
+-
+WARNING 2025-04-07 18:19:54,695 Info -cls=create_login|args=()|kwargs={'username': 'fajarsoegi', 'password': 'pass123!'}|Result={"code":400,"message":"Your password is incorrect"}
+-
+INFO 2025-04-07 18:20:02,385 Info -cls=create_login|args=()|kwargs={'username': 'fajarsoegi', 'password': 'pass12345!'}|Result={"code":200,"data":{"device":[],"email":"fajarsoegi@gmail.com","id":"202504-0718-1950-cb9f2df0-b1dd-4cc5-9835-871003009a11","username":"fajarsoegi"},"message":"Successfully Login"}
+-
+INFO 2025-04-07 18:22:18,738 Info -cls=create_change_password|args=()|kwargs={'username': 'fajarsoegi', 'password': 'pass123!', 'email': 'fajarsoegi@gmail.com'}|Result={"code":200,"data":{"authentication":[{"device":[],"email":"monicaigun@gmail.com","id":"202504-0718-1828-c7b8fc89-1335-4e10-8de9-2d9230e42420","password":[{"password":"gAAAAABn87SEd04DGeocy0zbSp77vRuPwz2H0Qt0CWiH56mQXV5kKBJZwWEXE8MKKUwwVU871_G7-pHykY44em_Vx13aEyrwaw==","primary":true}],"username":"monicaigun"},{"device":[],"email":"fajarsoegi@gmail.com","id":"202504-0718-1950-cb9f2df0-b1dd-4cc5-9835-871003009a11","password":[{"password":"gAAAAABn87TWYj-9OQ91ku7Ib2C8DqzihopvWoP5nw2ZOpVpM-EwR0uFNZzbchUIk_uqKcuyy8bVttZAFFun7FX2vMa1KQJptQ==","primary":false},{"password":"gAAAAABn87VqtvcGhwd5f2pIwWQEMi4xKbsxaazgoGivE2AHx-5JyVNRyu2MQJTsRVpyUgXUHEFZGHm1XDj29OsI5C88JppPDg==","primary":true}],"username":"fajarsoegi"}]},"message":"Successfully Login"}
+-
+WARNING 2025-04-07 18:22:39,275 Info -cls=create_login|args=()|kwargs={'username': 'fajarsoegi', 'password': 'pass12345!'}|Result={"code":400,"message":"Your password is incorrect"}
+-
+INFO 2025-04-07 18:22:46,100 Info -cls=create_login|args=()|kwargs={'username': 'fajarsoegi', 'password': 'pass123!'}|Result={"code":200,"data":{"device":[],"email":"fajarsoegi@gmail.com","id":"202504-0718-1950-cb9f2df0-b1dd-4cc5-9835-871003009a11","username":"fajarsoegi"},"message":"Successfully Login"}
+-
+INFO 2025-04-07 18:24:17,561 Info -cls=create_change_password|args=()|kwargs={'username': 'fajarsoegi', 'password': 'pass123!', 'email': 'fajarsoegi@gmail.com'}|Result={"code":200,"data":{"device":[],"email":"fajarsoegi@gmail.com","id":"202504-0718-1950-cb9f2df0-b1dd-4cc5-9835-871003009a11","username":"fajarsoegi"},"message":"Successfully Login"}
+-
+INFO 2025-04-07 18:24:27,091 Info -cls=create_login|args=()|kwargs={'username': 'fajarsoegi', 'password': 'pass123!'}|Result={"code":200,"data":{"device":[],"email":"fajarsoegi@gmail.com","id":"202504-0718-1950-cb9f2df0-b1dd-4cc5-9835-871003009a11","username":"fajarsoegi"},"message":"Successfully Login"}
+-
+INFO 2025-04-07 18:24:44,536 Info -cls=create_change_password|args=()|kwargs={'username': 'fajarsoegi', 'password': 'pass12345!', 'email': 'fajarsoegi@gmail.com'}|Result={"code":200,"data":{"device":[],"email":"fajarsoegi@gmail.com","id":"202504-0718-1950-cb9f2df0-b1dd-4cc5-9835-871003009a11","username":"fajarsoegi"},"message":"Successfully Login"}
+-
