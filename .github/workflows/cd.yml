@@ -28,6 +28,9 @@ jobs:
         password: ${{ secrets.PASSWORD }}
         script: |
           cd iot88
+          deactivate
           git pull
+          python3 -m venv envV1
+          source envV1\bin\activate
           pip install -r requirements.txt
           py waitress_server.py
