@@ -18,4 +18,3 @@ def login() :
     }
     response = requests.post(BASE_URL+path,data=json.dumps(data), headers=headers,timeout=10)
     assert response.status_code == 200
-    
