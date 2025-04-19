@@ -27,7 +27,7 @@ jobs:
         username: ${{ secrets.USERNAME }}
         password: ${{ secrets.PASSWORD }}
         script: |
-          cd iot88
+          cd \home\soegidev\iot88\
           deactivate
           git pull
           python3 -m venv envV1
