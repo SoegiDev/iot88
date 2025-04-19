@@ -19,7 +19,9 @@ jobs:
         python -m pip install --upgrade pip
         pip install pylint
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-    - name: Analysing the code with pylint
+    - name: Analysing Test Script the code with pylint
       run: |
         pylint $(git ls-files 'tests/*.py')
+    - name: Analysing the code Test Auth with flake8
+      run: |
         flake8 $(git ls-files 'test_auth.py')
