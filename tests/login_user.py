@@ -16,6 +16,6 @@ def login() :
         'username': username,
         'password': password
     }
-    response = requests.post(BASE_URL+path,data=json.dumps(data), headers=headers)
+    response = requests.post(BASE_URL+path,data=json.dumps(data), headers=headers,timeout=10)
     assert response.status_code == 200
     
