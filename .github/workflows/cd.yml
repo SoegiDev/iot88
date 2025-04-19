@@ -31,6 +31,6 @@ jobs:
           deactivate
           git pull
           python3 -m venv envV1
-          source envV1\bin\activate
+          source envV1/bin/activate
           pip install -r requirements.txt
           python3 waitress_server.py
