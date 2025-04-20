@@ -33,4 +33,5 @@ jobs:
           cd server_iot/iot88/
           git pull
           source envV1/bin/activate
-          ls
+          pip install -r requirements.txt
+          echo value is $({{ secrets.PRIVATE_KEY }})
