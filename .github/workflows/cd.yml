@@ -30,9 +30,7 @@ jobs:
         port: 22
         script: |
           fuser -k 8080/tcp
-          cd iot88/
-          cd envV1/
-          source bin/activate
-          cd ..
+          cd server_iot/iot88/
+          git pull
           pip install -r requirements.txt
-          python3 waitress_server.py &
+          gunicorn --bind 0.0.0.0:5000 wsgi:app
