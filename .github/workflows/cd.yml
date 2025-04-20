@@ -30,7 +30,6 @@ jobs:
           fuser -k 8080/tcp
           cd server_iot/iot88/
           git pull
-          source envV1/bin/activate
+          source server_iot/iot88/envV1/bin/activate
           pip install -r requirements.txt
-          gunicorn --bind 0.0.0.0:5000 wsgi:app
-          echo berhasil
+          echo pwd
