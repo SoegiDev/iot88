@@ -32,4 +32,4 @@ jobs:
         script: |
           cd iot88/
           cd envV1/
-          ls
+          source bin/activate
