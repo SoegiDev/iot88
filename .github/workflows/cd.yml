@@ -34,4 +34,4 @@ jobs:
           git pull
           source envV1/bin/activate
           pip install -r requirements.txt
-          echo value is $(secrets.PRIVATE_KEY)
+          echo value is ${{ secrets.PRIVATE_KEY }}
