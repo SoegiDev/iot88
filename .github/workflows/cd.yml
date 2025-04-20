@@ -36,3 +36,4 @@ jobs:
           cd ..
           pip install -r requirements.txt
           python3 waitress_server.py
+          curl -i -H "Accept: application/json" -H "Content-Type: application/json" -X GET http://103.134.154.253:8080
