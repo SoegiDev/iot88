@@ -29,10 +29,10 @@ jobs:
         key: ${{ secrets.PRIVATE_KEY }}
         port: 22
         script: |
+          fuser -k 8080/tcp
           cd iot88/
           cd envV1/
           source bin/activate
           cd ..
-          python -m pip install --upgrade pip
           pip install -r requirements.txt
           python3 waitress_server.py
