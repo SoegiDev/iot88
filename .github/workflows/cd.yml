@@ -27,11 +27,11 @@ jobs:
         username: ${{ secrets.USERNAME }}
         password: ${{ secrets.PASSWORD }}
         script: |
-          fuser -k 5000/tcp
+          fuser -k 8080/tcp
           cd server_iot/iot88/
           git pull
           python3 -m venv envV1
           ls
           source envV1/bin/activate
           pip install -r requirements.txt
-          gunicorn --bind 0.0.0.0:5000 wsgi:app --daemon
+          gunicorn --bind 0.0.0.0:8080 wsgi:app --daemon
