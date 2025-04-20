@@ -31,4 +31,6 @@ jobs:
         command_timeout: 20s
         script: |
           cd iot88/
-          source envV1/bin/deactivate
+          git pull
+          pip install -r requirements.txt
+          python3 waitress_server.py
