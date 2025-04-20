@@ -26,12 +26,10 @@ jobs:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USERNAME }}
         password: ${{ secrets.PASSWORD }}
-        key: ${{ secrets.PRIVATE_KEY }}
-        port: 22
         script: |
           fuser -k 8080/tcp
           cd server_iot/iot88/
           git pull
           source envV1/bin/activate
           pip install -r requirements.txt
-          echo value is ${{ secrets.PRIVATE_KEY }}
+          echo berhasil
