@@ -29,9 +29,10 @@ jobs:
         script: |
           fuser -k 8080/tcp
           cd server_iot/iot88/
-          python3 -m venv envV1
           git pull
-          source envV1/bin/activate.bat
+          python3 -m venv envV1
+          ls
+          source envV1/bin/activate
           pip install -r requirements.txt
           gunicorn --bind 0.0.0.0:5000 wsgi:app
           pwd
