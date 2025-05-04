@@ -105,6 +105,68 @@ def get_login_username(username,l,role : str,columns : None):
             else:
                 continue
 
+# GET NOTIF SENSOR
+def get_notif_device(id,notif,current_user,columns : None):
+    len_data = 0
+    raw = {}
+    data = []
+    total_data = len(notif['notif'])
+    admin = True if current_user['role'] == "admin" or current_user['role'] == "superadmin" else False 
+    for x in notif['notif']:
+        len_data = len_data + 1
+        if id is None :
+            if admin :
+                if columns == None:
+                    data.append(x)
+                else:
+                    for word in columns:
+                        value = x.get(word)
+                        raw[word] = value
+                    data.append(x)
+            else:
+                if x.get("user_owner")==current_user['username']:
+                    if columns == None:
+                        data.append(x)
+                    else:
+                        for word in columns:
+                            value = x.get(word)
+                            raw[word] = value
+                        data.append(raw)            
+                else:
+                    if len_data == total_data:
+                        return None
+                    else:
+                        continue
+        else:
+            if admin :
+                if x.get("id")==id or x.get("device_id")==id:
+                    if columns == None:
+                        return x
+                    else:
+                        for word in columns:
+                            value = x.get(word)
+                            raw[word] = value
+                        return raw                  
+                else:
+                    if len_data == total_data:
+                        return None
+                    else:
+                        continue
+            else:
+                if (x.get("id")==id or x.get("device_id")==id) and x.get("user_owner")==current_user['username']:
+                    if columns == None:
+                        return x
+                    else:
+                        for word in columns:
+                            value = x.get(word)
+                            raw[word] = value
+                        return raw                  
+                else:
+                    if len_data == total_data:
+                        return None
+                    else:
+                        continue
+    return data    
 
 # GET DEVICE ADMIN
 def get_device_admin(id,devices,current_user,columns : None):
@@ -112,7 +174,6 @@ def get_device_admin(id,devices,current_user,columns : None):
     raw = {}
     data = []
     total_data = len(devices['device'])
-    print(f"Total data {total_data}")
     for x in devices['device']:
         len_data = len_data + 1
         if id is None :
@@ -147,6 +208,69 @@ def get_device(id,devices,current_user,columns : None):
     total_data = len(devices['device'])
     admin = True if current_user['role'] == "admin" or current_user['role'] == "superadmin" else False 
     for x in devices['device']:
+        len_data = len_data + 1
+        if id is None :
+            if admin :
+                if columns == None:
+                    data.append(x)
+                else:
+                    for word in columns:
+                        value = x.get(word)
+                        raw[word] = value
+                    data.append(x)
+            else:
+                if x.get("user_owner")==current_user['username']:
+                    if columns == None:
+                        data.append(x)
+                    else:
+                        for word in columns:
+                            value = x.get(word)
+                            raw[word] = value
+                        data.append(raw)            
+                else:
+                    if len_data == total_data:
+                        return None
+                    else:
+                        continue
+        else:
+            if admin :
+                if x.get("id")==id or x.get("device_id")==id:
+                    if columns == None:
+                        return x
+                    else:
+                        for word in columns:
+                            value = x.get(word)
+                            raw[word] = value
+                        return raw                  
+                else:
+                    if len_data == total_data:
+                        return None
+                    else:
+                        continue
+            else:
+                if (x.get("id")==id or x.get("device_id")==id) and x.get("user_owner")==current_user['username']:
+                    if columns == None:
+                        return x
+                    else:
+                        for word in columns:
+                            value = x.get(word)
+                            raw[word] = value
+                        return raw                  
+                else:
+                    if len_data == total_data:
+                        return None
+                    else:
+                        continue
+    return data    
+       
+# GET ESL
+def get_esl(id,devices,current_user,columns : None):
+    len_data = 0
+    raw = {}
+    data = []
+    total_data = len(devices['esl'])
+    admin = True if current_user['role'] == "admin" or current_user['role'] == "superadmin" else False 
+    for x in devices['esl']:
         len_data = len_data + 1
         if id is None :
             if admin :
@@ -245,11 +369,8 @@ def change_device_sensor_by_user(current_user,device,sensor,time,device_list):
             for key in device:
                 x['last_updated'] = time
                 for sensor_x in x['sensor']:
-                    print(sensor_x)
                     if sensor_x['name'] == sensor['name']:
-                        print(f"Sama {sensor_x['name']} {sensor['name']}")
                         for key1 in sensor:
-                            print(f"Update {key1} {sensor[key1]}")
                             sensor_x[key1] = sensor[key1]
     save_data("resources/device_list.json",device_list)
     return device_list
@@ -269,15 +390,13 @@ def change_device_sensor_by_admin(device,sensor,time,device_list):
             for key in device:
                 x['last_updated'] = time
                 for sensor_x in x['sensor']:
-                    print(sensor_x)
                     if sensor_x['name'] == sensor['name']:
-                        print(f"Sama {sensor_x['name']} {sensor['name']}")
                         for key1 in sensor:
-                            print(f"Update {key1} {sensor[key1]}")
                             sensor_x[key1] = sensor[key1]
                       
     save_data("resources/device_list.json",device_list)
     return device_list
+
 
 def change_user(get_user,time,current_user,l):
     for x in l['authentication']:
@@ -289,6 +408,22 @@ def change_user(get_user,time,current_user,l):
     return l
 
 #============================Register========================#
+
+def register_device_sensor_by_admin(device,sensor,time,device_list):
+    sensor_add_null =  []
+    for x in device_list['device']:
+        if x.get("id")==device['id']:
+            if 'sensor' not in x:
+                x['sensor'] = sensor_add_null
+                x['last_updated'] = time
+                x['sensor'].append(sensor)
+            else:
+                for sensor_x in x['sensor']:
+                    if sensor_x['name'] != sensor['name']:
+                        x['last_updated'] = time
+                        x['sensor'].append(sensor)
+    save_data("resources/device_list.json",device_list)
+    return device_list
 
 def register_device_by_admin(device):
     get_load = load_data("resources/device_list.json")
@@ -308,3 +443,23 @@ def register_device_by_user(auths,formDevice,devices,time,current_user):
                     x['last_updated'] = time
     save_data("resources/auth.json",auths)
     return devices
+
+def register_push_notif(device_notif,sensor):
+    device_notif['notif'].append(sensor)
+    results = save_data("resources/device_notif.json",device_notif)
+    return results
+
+def register_esl_by_admin(esl):
+    get_load = load_data("resources/esl_list.json")
+    get_load['esl'].append(esl)
+    results = save_data("resources/esl_list.json",get_load)
+    return results
+
+def change_esl_by_admin(device,time,device_list):
+    for x in device_list['esl']:
+        if x.get("id")==device['id']:
+            for key in device:
+                x[key] = device[key]
+                x['last_updated'] = time
+    save_data("resources/esl_list.json",device_list)
+    return device_list

@@ -71,7 +71,6 @@ def add_log():
                     args_params = args
                 results_function = func(*args,**kwargs)
                 Hasil = results_function.data.decode("utf-8")
-                print(Hasil)
                 values = f"Info -cls={func.__name__}|args={args_params}|kwargs={kwargs_params}|Result={Hasil}-"
                 if results_function.status_code not in codeOk:
                     logger = _generate_log(path,2)

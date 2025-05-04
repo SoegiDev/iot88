@@ -16,3 +16,11 @@ def get_auth_file():
 def get_device_file():
     get_load = load_data("resources/device_list.json")
     return get_load
+
+def get_device_notif():
+    get_load = load_data("resources/device_notif.json")
+    return get_load
+
+def get_esl_file():
+    get_load = load_data("resources/esl_list.json")
+    return get_load
