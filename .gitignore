@@ -1,0 +1,6 @@
+envV1*
+__pycache__*
+/controller/__pycache__*
+/helper/__pycache__*
+/decorators/__pycache__*
+pytest_cache*
