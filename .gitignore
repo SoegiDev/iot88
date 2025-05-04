@@ -4,3 +4,4 @@ __pycache__*
 /helper/__pycache__*
 /decorators/__pycache__*
 pytest_cache*
+logs*
