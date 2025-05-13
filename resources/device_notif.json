@@ -1,0 +1,84 @@
+{
+  "notif": [
+    {
+      "id": "0411-2607-fce4f48a-6eae-452e-bfd0-9f4d82390d8d",
+      "user_owner": "",
+      "name": "pir_sensor",
+      "message": "Ada yang mendekat dengan jarak 50 cm",
+      "device_id": "0100-2217-b2f8e124-2337-413c-b388-89555697e9c4",
+      "created_time": "2025-05-04 11:26:07"
+    },
+    {
+      "id": "0411-2609-e06db225-c34f-4963-b9a0-d63a274af80a",
+      "user_owner": "",
+      "name": "pir_sensor",
+      "message": "Ada yang mendekat dengan jarak 50 cm",
+      "device_id": "0100-2217-b2f8e124-2337-413c-b388-89555697e9c4",
+      "created_time": "2025-05-04 11:26:09"
+    },
+    {
+      "id": "0411-2610-2732c91c-5f9a-45f7-81d6-34926e497163",
+      "user_owner": "",
+      "name": "pir_sensor",
+      "message": "Ada yang mendekat dengan jarak 50 cm",
+      "device_id": "0100-2217-b2f8e124-2337-413c-b388-89555697e9c4",
+      "created_time": "2025-05-04 11:26:10"
+    },
+    {
+      "id": "0412-3545-3629ecc6-a3cd-4f9c-b78d-adb9cbe27081",
+      "user_owner": "",
+      "name": "pir_sensor",
+      "message": "Ada yang mendekat dengan jarak 50 cm",
+      "device_id": "0100-2217-b2f8e124-2337-413c-b388-89555697e9c4",
+      "created_time": "2025-05-04 12:35:45"
+    },
+    {
+      "id": "0412-3920-1a2c3f46-5bde-4c0a-a07e-86c6e9c580fa",
+      "user_owner": "",
+      "name": "pir_sensor",
+      "message": "Ada yang mendekat dengan jarak 50 cm",
+      "device_id": "0100-2217-b2f8e124-2337-413c-b388-89555697e9c4",
+      "created_time": "2025-05-04 12:39:20"
+    },
+    {
+      "id": "0413-2234-d058fd0e-041c-4903-ab58-a9a77dc6236e",
+      "user_owner": "",
+      "name": "pir_sensor",
+      "message": "Ada yang mendekat dengan jarak 50 cm",
+      "device_id": "0100-2217-b2f8e124-2337-413c-b388-89555697e9c4",
+      "created_time": "2025-05-04 13:22:34"
+    },
+    {
+      "user_owner": "",
+      "name": "pir_sensor",
+      "message": "Ada yang mendekat dengan jarak 50 cm",
+      "id": "0709-4834-70f60315-0eaf-4bd9-a506-17e32ac2049a",
+      "device_id": "0100-2217-b2f8e124-2337-413c-b388-89555697e9c4",
+      "created_time": "2025-05-07 09:48:34"
+    },
+    {
+      "user_owner": "",
+      "name": "pir_sensor",
+      "message": "Ada yang mendekat dengan jarak 50 cm",
+      "id": "0710-1048-b3bb8f53-8e67-43de-99d7-e3d816f5b006",
+      "device_id": "0100-2217-b2f8e124-2337-413c-b388-89555697e9c4",
+      "created_time": "2025-05-07 10:10:48"
+    },
+    {
+      "user_owner": "",
+      "name": "pir_sensor",
+      "message": "Ada yang mendekat dengan jarak 50 cm",
+      "id": "0711-0212-20e08e19-1a3f-4e59-b19b-05012ec51bc6",
+      "device_id": "0100-2217-b2f8e124-2337-413c-b388-89555697e9c4",
+      "created_time": "2025-05-07 11:02:12"
+    },
+    {
+      "user_owner": "",
+      "name": "pir_sensor",
+      "message": "Ada yang mendekat dengan jarak 50 cm",
+      "id": "0714-3523-2be2106d-cd46-4cf1-b6ff-4ac125f4c707",
+      "device_id": "0100-2217-b2f8e124-2337-413c-b388-89555697e9c4",
+      "created_time": "2025-05-07 14:35:23"
+    }
+  ]
+}
