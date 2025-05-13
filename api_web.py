@@ -12,7 +12,7 @@ web_bp = Blueprint('web_bp', __name__)
 @add_log()
 def esl_register(current_user):
     y = request.get_json()
-    l_device = create_esl(y)
+    l_device = create_esl(y,current_user)
     return l_device
 
 @web_bp.route('/get_profile', methods=['GET'])
