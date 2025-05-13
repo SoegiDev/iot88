@@ -6,12 +6,12 @@
       "created_date": "05-01-2025 00:21:59",
       "deleted": false,
       "device_id": "02198321321312",
-      "device_name": "Device Node",
+      "device_name": "Device Node EDIT",
       "gsm_connect": false,
       "id": "0100-2217-b2f8e124-2337-413c-b388-89555697e9c4",
       "ip_address": "0.0.0.0",
       "key": "I0EQ21G0P1",
-      "last_updated": "04.05.2025 10:28:44",
+      "last_updated": "2025-05-12 14:35:07",
       "live_date": "05-01-2025 00:21:59",
       "live_end": "05-01-2025 00:21:59",
       "location": "device_location",
@@ -21,7 +21,7 @@
           "active": true,
           "description": "Gas Sensor",
           "name": "mq-2",
-          "threshold": "800"
+          "threshold": "400"
         },
         {
           "active": true,
@@ -38,7 +38,8 @@
       "user_owner": "",
       "user_remote": false,
       "user_view": false,
-      "wifi_connect": false
+      "wifi_connect": false,
+      "role": "device"
     }
   ]
 }

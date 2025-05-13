@@ -1,10 +1,11 @@
 from functools import wraps
 import jwt
-from flask import request,abort
+from flask import request
 from flask import current_app
-from helper.responses import bad_request,success_request
-from helper.files import get_auth_file
-from helper.query import get_login_username
+from helper.responses import bad_request
+from helper.iot_query import iot_get_by_id
+from helper.esl_query import esl_get_by_id
+from helper.user_query import user_get_by_id
 
 def token_required(f):
     @wraps(f)
@@ -15,10 +16,18 @@ def token_required(f):
             # abort(bad_request("Invalid Authorize!", 401))
             return bad_request("Token is Invalid Authorize!", 401)
         try:
-            auths = get_auth_file()
             data = jwt.decode(token, current_app.config['SECRET_KEY'], algorithms=["HS256"])
-            get_data = get_login_username(data['username'],auths,data['role'],
-                                          ["username","email","id","role","password","last_updated"])
+            # get_data = None
+            if(data['role']=="device_IOT"):            
+                get_data = iot_get_by_id(data['id'],None)
+                get_data['role'] = "device_IOT"
+            if(data['role']=="device_ESL"):            
+                get_data = esl_get_by_id(data['id'],None)
+                get_data['role'] = "device_ESL"
+            if(data['role']=="user"): 
+                get_data = user_get_by_id(data,None)
+            if(data['role']=="admin"): 
+                get_data = user_get_by_id(data,None)
         except jwt.ExpiredSignatureError:
             #abort(bad_request("Invalid Authorize!", 401))
             return bad_request("Token is Expired!", 401)

@@ -1,7 +1,7 @@
 {
   "esl": [
     {
-      "device_id": "1237129371412837",
+      "device_id": "230219839218392182198",
       "device_name": "",
       "category": "",
       "type": "",
@@ -18,14 +18,21 @@
       "gsm_connect": false,
       "wifi_connect": false,
       "location": "device_location",
-      "message_top": "Message 1",
-      "message_bottom": "Message 2",
-      "id": "0402-0803-59845d47-5f60-48f9-bd1c-36e0cee5be4a",
-      "key": "0GBKHOU2KU",
-      "live_date": "04.05.2025 02:08:03",
-      "live_end": "04.05.2025 02:08:03",
-      "created_date": "04.05.2025 02:08:03",
-      "last_updated": "2025-05-04 13:06:49",
+      "esl_name": "Product Name",
+      "esl_desc": "Product Description",
+      "esl_price": "300000",
+      "esl_price_disc": "Product Promo",
+      "esl_link": "Product Promo",
+      "esl_image": "Product TESTING IMAGE",
+      "screen_active": true,
+      "idle_start": "",
+      "idle_end": "",
+      "id": "1118-3235-a7b1f4ce-79fd-4120-9482-28ea52281f1c",
+      "key": "1K5V2G3X1O",
+      "live_date": "2025-05-11 18:32:35",
+      "live_end": "2025-05-11 18:32:35",
+      "created_date": "2025-05-11 18:32:35",
+      "last_updated": "2025-05-11 18:52:58",
       "created_by": "monicaigun"
     }
   ]
