@@ -5,3 +5,4 @@ __pycache__*
 /decorators/__pycache__*
 pytest_cache*
 logs*
+resources*
