@@ -42,6 +42,7 @@ def esl_get_by_id(device_id : None,columns : None):
     total_data = len(list_data)
     for x in list_data:
         if device_id is not None : 
+            process_data = process_data + 1
             if x.get("id")==device_id or x.get("device_id")==device_id:
                 if columns == None:
                     return x
@@ -51,7 +52,7 @@ def esl_get_by_id(device_id : None,columns : None):
                         raw[word] = value
                     return raw                  
             else:
-                if len_data == total_data:
+                if process_data == total_data:
                     return None
                 else:
                     continue
