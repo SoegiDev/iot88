@@ -21,7 +21,7 @@ def e_device_get(id : str):
         get_ = esl_get_by_id(id,None)
         message = f"Successfully Get Device {id}"
         return success_request(message=message,code=200,data=get_)
-    get_ = esl_get(id,None)
+    get_ = esl_get_by_id(None,None)
     message = "Successfully Get All Device"
     return success_request(message=message,code=200,data=get_)
 
