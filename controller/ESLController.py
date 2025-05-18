@@ -4,6 +4,26 @@ from helper.esl_query import esl_get_token,esl_get_by_id,esl_change,esl_push_not
 from helper.responses import bad_request,success_request
 import locale
 
+def money_format(value):
+    value = str(value).split('.')
+    money = ''
+    count = 1
+
+    for digit in value[0][::-1]:
+        if count != 3:
+            money += digit
+            count += 1
+        else:
+            money += f'{digit},'
+            count = 1
+
+    if len(value) == 1:
+        money = (money[::-1]).replace('','')
+    else:
+        money = (money[::-1] + '.' + value[1]).replace('','')
+
+    return money
+
 def rupiah_format(angka, with_prefix=False, desimal=0):
     locale.setlocale(locale.LC_NUMERIC, 'IND')
     rupiah = locale.format_string("%.*f", (desimal, angka), True)
@@ -29,7 +49,7 @@ def e_device_get(id : str):
     if id is not None:
         get_ = esl_get_by_id(id,None)
         price = int(get_['item_price'])
-        # get_['item_price'] = rupiah_format(price, False)
+        get_['item_price'] = money_format(price)
         message = f"Successfully Get Device {id}"
         return success_request(message=message,code=200,data=get_)
     get_ = esl_get_by_id(None,None)
