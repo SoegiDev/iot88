@@ -2,6 +2,15 @@ from datetime import datetime
 from helper.function import generate_device_id,generate_token
 from helper.esl_query import esl_get_token,esl_get_by_id,esl_change,esl_push_notif,esl_get_by_user
 from helper.responses import bad_request,success_request
+import locale
+
+def rupiah_format(angka, with_prefix=False, desimal=0):
+    locale.setlocale(locale.LC_NUMERIC, 'IND')
+    rupiah = locale.format_string("%.*f", (desimal, angka), True)
+    if with_prefix:
+        return "Rp. {}".format(rupiah)
+    return rupiah
+
 def e_identity_token(current_app,key : str):
     get_ = esl_get_token(key,['id','key'])
     if get_ is None:
@@ -19,10 +28,15 @@ def e_identity_token(current_app,key : str):
 def e_device_get(id : str):
     if id is not None:
         get_ = esl_get_by_id(id,None)
+        price = int(get_['item_price'])
+        get_['item_price'] = rupiah_format(price, False)
         message = f"Successfully Get Device {id}"
+        print("PRINT GET")
         return success_request(message=message,code=200,data=get_)
     get_ = esl_get_by_id(None,None)
+    print("PRINT GET")
     message = "Successfully Get All Device"
+    
     return success_request(message=message,code=200,data=get_)
 
 def e_device_getByUser(user: dict, deviceId: None):

@@ -1,5 +1,5 @@
 from helper.files import load_data,save_data
-
+import locale
 #================ GET DATA ===============#
 
 def esl_get_token(key : None,columns : None):
@@ -130,3 +130,10 @@ def esl_register(esl):
     get_load['esl'].append(esl)
     results = save_data("resources/esl_list.json",get_load)
     return results
+
+def rupiah_format(angka, with_prefix=False, desimal=2):
+    locale.setlocale(locale.LC_NUMERIC, 'IND')
+    rupiah = locale.format("%.*f", (desimal, angka), True)
+    if with_prefix:
+        return "Rp. {}".format(rupiah)
+    return rupiah
