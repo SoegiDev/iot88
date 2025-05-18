@@ -29,7 +29,7 @@ def e_device_get(id : str):
     if id is not None:
         get_ = esl_get_by_id(id,None)
         price = int(get_['item_price'])
-        get_['item_price'] = rupiah_format(price, False)
+        # get_['item_price'] = rupiah_format(price, False)
         message = f"Successfully Get Device {id}"
         return success_request(message=message,code=200,data=get_)
     get_ = esl_get_by_id(None,None)
