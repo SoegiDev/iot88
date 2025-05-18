@@ -31,12 +31,9 @@ def e_device_get(id : str):
         price = int(get_['item_price'])
         get_['item_price'] = rupiah_format(price, False)
         message = f"Successfully Get Device {id}"
-        print("PRINT GET")
         return success_request(message=message,code=200,data=get_)
     get_ = esl_get_by_id(None,None)
-    print("PRINT GET")
     message = "Successfully Get All Device"
-    
     return success_request(message=message,code=200,data=get_)
 
 def e_device_getByUser(user: dict, deviceId: None):
