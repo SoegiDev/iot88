@@ -2,7 +2,7 @@ from datetime import datetime, timezone, timedelta
 from uuid import uuid4
 import random
 import jwt
-expireTime = 360
+expireTime = 30000
 eventid = datetime.now().strftime('%y%m-%d%H-%M%S-') + str(uuid4())
 eventid
 def generate_userId():

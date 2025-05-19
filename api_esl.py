@@ -2,11 +2,18 @@ from flask import request
 from decorators import add_log
 from helper.responses import bad_request
 from flask import Blueprint
-from controller.ESLController import e_change,e_device_get,e_device_getByUser,e_identity_token,e_push_notif,e_push_active
+from controller.ESLController import create_esl,e_change,e_device_get,e_device_getByUser,e_identity_token,e_push_notif,e_push_active
 from decorators import add_log,token_required
 
 esl_bp = Blueprint('esl_bp', __name__)
     
+@esl_bp.route('/register', methods=['POST'])
+@add_log()
+def esl_register():
+    y = request.get_json()
+    l_device = create_esl(y)
+    return l_device
+
 
 @esl_bp.route("/get", methods=['GET'])
 @token_required

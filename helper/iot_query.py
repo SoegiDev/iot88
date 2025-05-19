@@ -13,7 +13,7 @@ def iot_get_token(key : None,columns : None):
     for x in list_data:
         if key is not None : 
             process_data = process_data + 1
-            if x.get("key")==key:
+            if x.get("key")==key or x.get("device_macaddress")==key:
                 if columns == None:
                     return x
                 else:

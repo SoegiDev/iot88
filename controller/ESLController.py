@@ -1,6 +1,6 @@
 from datetime import datetime
-from helper.function import generate_device_id,generate_token
-from helper.esl_query import esl_get_token,esl_get_by_id,esl_change,esl_push_notif,esl_get_by_user
+from helper.function import generate_device_id,generate_token,generate_key
+from helper.esl_query import esl_get_token,esl_get_by_id,esl_change,esl_push_notif,esl_get_by_user,esl_register
 from helper.responses import bad_request,success_request
 import locale
 
@@ -31,8 +31,66 @@ def rupiah_format(angka, with_prefix=False, desimal=0):
         return "Rp. {}".format(rupiah)
     return rupiah
 
+def create_esl(post : dict):
+    date_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+    id = generate_device_id()
+    mac = post['mac_address'].replace(":", "")
+    device : dict = {}
+    device['id'] = mac
+    device['device_id'] = id
+    device['device_name'] = "ESL_Name"
+    device['device_category'] = "device_category"
+    device['device_name'] = "ESL_Name"
+    device['device_type']="ESL_Type"
+    device['device_model'] = post['model']
+    device['device_location'] = "device_location"
+    device['device_connected'] = False
+    device["device_screen"] = True
+    device['device_key'] = generate_key()
+    device['base_mac_address'] = mac
+    device['base_ip_address'] = post['ip_address']
+    device['base_server'] = post['server']
+    device['base_endpoint'] = post['endpoint']
+    device['base_server_connected'] = True
+    device['client_wifi_ssid'] = ""
+    device['client_wifi_password'] = ""
+    device['client_owner'] = ""
+    device['client_ip_address'] = ""
+    device['client_server'] = ""
+    device['client_endpoint'] = ""
+    device['client_server_connected'] = False
+    device['deleted'] = False
+    device['status'] =  0
+    device["item_name"] = "Item Name"
+    device["item_desc"] = "Item Description"
+    device["item_content"] = "Item Content"
+    device["item_category"] = "Item Content"
+    device["item_uom"] = ""
+    device["item_code"] = "0"
+    device["item_price"] = "0"
+    device["item_disc_status"] = False
+    device["item_disc"] = "20"
+    device["item_berat"] = "200"
+    device["item_image"] = ""
+    device["item_promo"] =""
+    device["item_active"] = False
+    device["item_qris"] = "https://www.google.com"
+    device["item_qris_status"]= False
+    device["idle_start"] = ""
+    device['idle_end'] = ""
+    device['live_date'] = date_time
+    device['live_end'] = date_time
+    device['created_date'] = date_time
+    device['last_updated'] = date_time
+    device['created_by'] = "hardware"
+    get_ = esl_get_by_id(mac,None)
+    if get_ is not None:
+        return bad_request("Your Mac Address was Registered",400)
+    esl_process = esl_register(device)
+    return success_request(message="Successfully Registered",code=201,data=esl_process)
+
 def e_identity_token(current_app,key : str):
-    get_ = esl_get_token(key,['id','key'])
+    get_ = esl_get_token(key,['id','device_key'])
     if get_ is None:
         message = f"Data Not Found"
         return bad_request(message=message,code=404)

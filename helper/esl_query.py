@@ -12,7 +12,7 @@ def esl_get_token(key : None,columns : None):
     for x in list_data:
         if key is not None : 
             process_data = process_data + 1
-            if x.get("key")==key:
+            if x.get("device_key") == key or x.get['id'] == key:
                 if columns == None:
                     return x
                 else:
@@ -40,6 +40,8 @@ def esl_get_by_id(device_id : None,columns : None):
     raw = {}
     data = []
     total_data = len(list_data)
+    if total_data == 0:
+        return None
     for x in list_data:
         if device_id is not None : 
             process_data = process_data + 1
@@ -76,7 +78,7 @@ def esl_get_by_user(user: dict,device_id :None,columns : None):
     total_data = len(list_data)
     for x in list_data: 
         process_data = process_data + 1
-        if x.get("user_owner")==user['username']:
+        if x.get("client_owner")==user['username']:
             if x.get("id")==device_id or x.get("device_id")==device_id:
                 if columns == None:
                     return x

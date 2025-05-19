@@ -2,18 +2,10 @@ from flask import Flask, request,current_app
 from flask_cors import CORS
 from decorators import add_log,token_required
 from helper.responses import bad_request
-from controller.WebController import create_esl,get_profile,push_change_sensor,web_esl_byid,web_get_byUser,web_esl_update
+from controller.WebController import get_profile,push_change_sensor,web_esl_byid,web_get_byUser,web_esl_update
 from flask import Blueprint
 
 web_bp = Blueprint('web_bp', __name__)
-    
-@web_bp.route('/esl_register', methods=['POST'])
-@token_required
-@add_log()
-def esl_register(current_user):
-    y = request.get_json()
-    l_device = create_esl(y,current_user)
-    return l_device
 
 @web_bp.route('/get_profile', methods=['GET'])
 @token_required
