@@ -17,7 +17,7 @@ jobs:
     - name: Install Dependencies
       run: |
         python -m pip install --upgrade pip
-        f  [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+        pip install -r requirements.txt
     - name: Set Debug Environment Variable
       run: echo "DEBUG=false" >> $GITHUB_ENV  # Устанавливаем DEBUG в false для производственной среды
     - name: Deploy to VPS
