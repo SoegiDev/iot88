@@ -16,7 +16,6 @@ jobs:
         python-version: '3.12'
     - name: Install Dependencies
       run: |
-        cd src
         python -m pip install --upgrade pip
         f  [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Set Debug Environment Variable
