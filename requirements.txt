@@ -154,7 +154,7 @@ pytest==8.3.4
 python-dateutil==2.9.0.post0
 python-json-logger==3.2.1
 pytz==2025.1
-pywin32==308; platform_system == "Windows"
+pywin32==308
 pywinpty==2.0.15
 PyYAML==6.0.2
 pyzmq==26.2.1
@@ -193,8 +193,6 @@ stack-data==0.6.3
 sympy==1.13.1
 tensorboard==2.18.0
 tensorboard-data-server==0.7.2
-tensorflow==2.18.0
-tensorflow_intel==2.18.0
 termcolor==2.5.0
 terminado==0.18.1
 thinc==8.3.4
