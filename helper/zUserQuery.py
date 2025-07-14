@@ -1,0 +1,87 @@
+from helper.files import load_data,save_data
+import re
+filename = "zuser.json"
+def loadDataFile():
+    list = load_data(filename)
+    return list
+def saveDataFile(files):
+    saves = save_data(filename,files)
+    return saves
+    
+def checkExist(post: dict):
+    dataList = loadDataFile()
+    if "username" in post :
+        print("1")
+        filtered_data = list(filter(
+        lambda item: item['username'] == post['username'], dataList['zuser']))
+    if "email" in post :
+        print(f"2")
+        filtered_data = list(filter(
+        lambda item: item['email'] == post['email'] , dataList['zuser']))
+    if "id" in post :
+        print("3")
+        filtered_data = list(filter(
+        lambda item: item['id'] == post['id'] , dataList['zuser']))
+    if "username" in post and "email" in post :
+        print("4")
+        filtered_data = list(filter(
+        lambda item: item['email'] == post['email'] and item['username'] == post['username'] , dataList['zuser']))
+    if "username" in post and "id" in post :
+        print("5")
+        filtered_data = list(filter(
+        lambda item: item['id'] == post['id'] and item['username'] == post['username'] , dataList['zuser']))
+    if "id" in post and "email" in post :
+        print("6")
+        filtered_data = list(filter(
+        lambda item: item['email'] == post['email'] and item['id'] == post['id'] , dataList['zuser']))
+    if "email" not in post and "username" not in post and "id" not in post :
+        print("7")
+        return None
+    if not filtered_data:
+        return None
+    return filtered_data
+
+def queryListUsingSearch(post: dict):
+    dataList = loadDataFile()
+    if post['company_id'] is not None and post['query'] is not None :
+        print("1")
+        filtered_data = list(filter(
+        lambda item: item['company_id'] == post['company_id'] 
+        and (re.search(post['query'].lower(),item['username'].lower()) or re.search(post['query'].lower(),item['email'].lower())), dataList['zuser']))
+    if post['company_id'] is None and post['query'] is not None :
+        print("2")
+        filtered_data = list(filter(
+        lambda item: re.search(post['query'].lower(),item['username'].lower())
+        or re.search(post['query'].lower(),item['fullname'].lower()), dataList['zuser']))
+    if post['company_id'] is None and post['query'] is None :
+        print("3")
+        return dataList['zuser']
+    if not filtered_data:
+        return None
+    return filtered_data
+
+def insert(data: dict):
+    get_load = loadDataFile()
+    get_load['zuser'].append(data)
+    return saveDataFile(get_load)
+    
+def change(id,data,dateTime):
+    get_load = loadDataFile()
+    list_data = get_load['zuser']
+    for x in list_data:
+        if x.get("id")==id:
+            for key in data:
+                x[key] = data[key]
+                x['last_updated'] = dateTime
+        else:
+            continue
+    return saveDataFile(get_load)
+
+    
+def getList(post: dict):
+    get_load = loadDataFile()
+    sorted_by_Date = sorted(get_load, key=lambda item: item['created_date'])
+    
+    #descending
+    #sorted_by_age = sorted(get_load, key=lambda item: item['created_date'],reverse=True)
+    return sorted_by_Date

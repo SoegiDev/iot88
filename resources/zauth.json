@@ -1,0 +1,47 @@
+{
+  "zauth": [
+    {
+      "username": "admin_super",
+      "password": "gAAAAABoYkBHiVtDy_spUCISGlR9jnDF3y-0gnfOQUidO5Ae-ebEJYafCO7DzwHSr2Q8MlVirukihI3mZqTBBMwYXtXerUIcHg==",
+      "email": "adminsuper@admin.com",
+      "role": "superadmin",
+      "id": "202506.1815.2608.f35b046c-b6fc-49cb-911e-c31d8f850616",
+      "loggedIn": true,
+      "deleted": false,
+      "activate": true,
+      "access_login": true,
+      "created_date": "2025-06-18 15:26:08",
+      "last_updated": "2025-07-14 16:52:44",
+      "updated_by": "admin_super",
+      "code": 200,
+      "message": "Successfully Login"
+    },
+    {
+      "username": "admin_super_2",
+      "password": "gAAAAABoUnnkHCjJbDGCz_0NvLuI59MUWQ0QTuHcOaebhGYQKFtyxrtvqXHOjDWK36y-YHhSJAUDnL97RR4MI7h61fj3rrwGEg==",
+      "email": "adminsuper2@admin.com",
+      "role": "superadmin",
+      "id": "202506.1815.3340.fbe150a8-0a4a-4af4-be85-b50b9065da4f",
+      "loggedIn": true,
+      "deleted": false,
+      "activate": true,
+      "access_login": true,
+      "created_date": "2025-06-18 15:33:40",
+      "last_updated": "2025-06-19 15:41:12",
+      "updated_by": "admin_super_2"
+    },
+    {
+      "username": "admin_super_3",
+      "password": "gAAAAABoUqgGrTkxGJ1e1rX5Z1z0qAEnIxwxW4sPtxkoYT8EC5-QL09EI92x6AXd_9lreuNqC4jGDqsc02RhZTXT1_6i3BD6Yw==",
+      "email": "adminsuper3@admin.com",
+      "role": "superadmin",
+      "id": "202506.1818.5030.e7db3a4c-60fa-4d70-b8fb-ff59326fcee4",
+      "loggedIn": false,
+      "deleted": false,
+      "activate": false,
+      "access_login": true,
+      "created_date": "2025-06-18 18:50:30",
+      "last_updated": "2025-06-18 18:50:30"
+    }
+  ]
+}
