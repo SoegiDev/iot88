@@ -1,3 +1,47 @@
 {
-  "zuser": []
+  "zuser": [
+    {
+      "company_id": "202507.1510.2425.152a4",
+      "username": "admin_jajang",
+      "fullname": "Admin Jajang",
+      "email": "admin@email.com",
+      "password": "gAAAAABodcrLNcVbwkB2_xu97jhiSf20p5TiyVHAnA7SaSHS--_s12C9mTd8jDJkjno3t0HiE_O-G1udmWCV0wXR1ktSxZdk2Q==",
+      "role": "admin",
+      "access_login": true,
+      "store": [
+        {
+          "company_id": "202507.1510.2425.152a4",
+          "store_id": "outlet0.2425.152a4.202507-1510.f88e2"
+        }
+      ],
+      "id": "202507.1510.2811.888d7",
+      "employee_code": "",
+      "employee_email": "",
+      "send_email": false,
+      "access_admin": true,
+      "access_module": [],
+      "deleted": false,
+      "created_date": "2025-07-15 10:28:11",
+      "last_updated": "2025-07-15 10:28:19",
+      "created_by": "admin_super",
+      "auth_account": {
+        "access_login": true,
+        "activate": true,
+        "created_date": "2025-07-15 10:28:11",
+        "deleted": false,
+        "email": "admin@email.com",
+        "id": "202507.1510.2811.7bb5e",
+        "last_updated": "2025-07-15 10:28:11",
+        "loggedIn": false,
+        "password": "gAAAAABodcrLNcVbwkB2_xu97jhiSf20p5TiyVHAnA7SaSHS--_s12C9mTd8jDJkjno3t0HiE_O-G1udmWCV0wXR1ktSxZdk2Q==",
+        "role": "admin",
+        "user_id": "202507.1510.2811.888d7",
+        "username": "admin_jajang"
+      },
+      "code": 200,
+      "message": "Data Updated",
+      "activate": true,
+      "updated_by": "admin_super"
+    }
+  ]
 }

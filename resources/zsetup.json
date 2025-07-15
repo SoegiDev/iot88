@@ -29,6 +29,21 @@
       "activate": false,
       "created_date": "2025-07-01 10:02:13",
       "last_updated": "2025-07-01 10:02:13"
+    },
+    {
+      "company_name": "PT. Harus Memulai dan Berani",
+      "company_address": "Bekasi Raya",
+      "company_email": "berani@email.com",
+      "company_sector": "",
+      "send_email": false,
+      "level": 0,
+      "backup": false,
+      "deep_sleep": false,
+      "id": "202507.1510.2425.417bd",
+      "deleted": false,
+      "activate": false,
+      "created_date": "2025-07-15 10:24:25",
+      "last_updated": "2025-07-15 10:24:25"
     }
   ]
 }

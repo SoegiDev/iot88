@@ -1,0 +1,16 @@
+{
+  "zoutlet": [
+    {
+      "company_id": "202507.1510.2425.152a4",
+      "store_name": "Toko Permata 1",
+      "store_email": "tokopermata@email.com",
+      "store_address": "Bekasi Raya",
+      "id": "outlet0.2425.152a4.202507-1510.f88e2",
+      "deleted": false,
+      "activate": false,
+      "created_date": "2025-07-15 10:24:52",
+      "last_updated": "2025-07-15 10:24:52",
+      "created_by": "admin_super"
+    }
+  ]
+}

@@ -42,6 +42,21 @@
       "access_login": true,
       "created_date": "2025-06-18 18:50:30",
       "last_updated": "2025-06-18 18:50:30"
+    },
+    {
+      "user_id": "202507.1510.2811.888d7",
+      "username": "admin_jajang",
+      "email": "admin@email.com",
+      "role": "admin",
+      "id": "202507.1510.2811.7bb5e",
+      "loggedIn": false,
+      "deleted": false,
+      "activate": true,
+      "access_login": true,
+      "password": "gAAAAABodcrLNcVbwkB2_xu97jhiSf20p5TiyVHAnA7SaSHS--_s12C9mTd8jDJkjno3t0HiE_O-G1udmWCV0wXR1ktSxZdk2Q==",
+      "created_date": "2025-07-15 10:28:11",
+      "last_updated": "2025-07-15 10:28:19",
+      "updated_by": "admin_super"
     }
   ]
 }

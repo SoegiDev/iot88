@@ -232,13 +232,14 @@ def esl_show(post: dict,current_user):
         message = f"Data Not Found"
         return bad_request(message=message,code=404)
     data = getESL[0]
-    outletSearch = {"id":data['client_store_id']}
-    companySearch = {"id":data['client_owner_id']}
-    fileStore = "outlet"+data['client_owner_id']+".json"
-    getOutlet = outletCheckExist(outletSearch,fileStore)
-    getCompany = companyCheckExist(companySearch)
-    data["client_owner_name"] = getCompany[0]['company_name']
-    data["client_store_name"] = getOutlet[0]['store_name']
+    if data['client_store_id'] != "":
+        outletSearch = {"id":data['client_store_id']}
+        companySearch = {"id":data['client_owner_id']}
+        fileStore = "outlet"+data['client_owner_id']+".json"
+        getOutlet = outletCheckExist(outletSearch,fileStore)
+        getCompany = companyCheckExist(companySearch)
+        data["client_owner_name"] = getCompany[0]['company_name']
+        data["client_store_name"] = getOutlet[0]['store_name']
     return success_request("Data Updated",200,data=data)
 
 def esl_change(post: dict,current_user):
