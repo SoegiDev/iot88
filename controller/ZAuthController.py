@@ -3,7 +3,7 @@ from helper.files import check_File,save_data
 from datetime import datetime
 from helper.enum import LevelRole
 from helper.responses import bad_request,success_request
-from helper.function import generate_token,generate_userId,pagination
+from helper.function import generate_token,pagination,generate_auth_id
 from helper.zAuthQuery import checkExist as authExistCheck,insert as authInsert,\
     change as authChange,queryListUsingSearch as authListSearch
 from helper.zUserQuery import change as userChange,checkExist as userExistCheck
@@ -21,18 +21,20 @@ clientAdmin = [LevelRole.Admin.value]
 def auth_register(data: dict):
     filenames_create = "zauth.json"
     date_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-    user_id = generate_userId()
+    auth_id = generate_auth_id()
+    print(auth_id)
+    print(check_File(filenames_create))
     if check_File(filenames_create) is False:
         saveItem = filenames_create
         data2 = {}
         data2["zauth"] = []
         save_data(saveItem,data2)
     if check_File(filenames_create) is True:
-        check = authExistCheck(data)
-        if check is not None:
+        check = len(authExistCheck(data))
+        if check > 0:
             message = "Your Email or Username is Already exist in System"
             return success_request(message,200,check)
-        data['id'] = user_id
+        data['id'] = auth_id
         data["loggedIn"] = False
         data['deleted'] = False
         data['activate'] = False
@@ -40,6 +42,7 @@ def auth_register(data: dict):
         data['password'] = e_password(data['password'])
         data['created_date'] = date_time
         data['last_updated'] = date_time
+        print(data)
         authInsert(data)
     return success_request("Successfully",200,None)
 
@@ -137,7 +140,7 @@ def user_to_authRegister(post: dict,current_user):
             return bad_request("Forbidden Access For Change Role Admin, Admin Team Only",403)
     filenames_create = "zauth.json"
     date_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-    generate_id = generate_userId()
+    auth_id = generate_auth_id()
     if check_File(filenames_create) is False:
         saveItem = filenames_create
         data2 = {}
@@ -153,7 +156,7 @@ def user_to_authRegister(post: dict,current_user):
         data['username'] = post['username']
         data['email'] = post['email']
         data['role'] = post['role']
-        data['id'] = generate_id
+        data['id'] = auth_id
         data["loggedIn"] = False
         data['deleted'] = False
         data['activate'] = False
@@ -175,7 +178,7 @@ def user_to_authRegisterImport(post: dict,current_user):
             return bad_request("Forbidden Access For Change Role Admin, Admin Team Only",403)
     filenames_create = "zauth.json"
     date_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-    user_id = generate_userId()
+    auth_id = generate_auth_id()
     if check_File(filenames_create) is False:
         saveItem = filenames_create
         data2 = {}
@@ -191,7 +194,7 @@ def user_to_authRegisterImport(post: dict,current_user):
         data['username'] = post['username']
         data['email'] = post['email']
         data['role'] = post['role']
-        data['id'] = user_id
+        data['id'] = auth_id
         data["loggedIn"] = False
         data['deleted'] = False
         data['activate'] = False

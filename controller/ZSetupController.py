@@ -3,7 +3,7 @@ from helper.files import check_File,save_data
 from datetime import datetime
 from helper.enum import LevelRole
 from helper.responses import bad_request,success_request
-from helper.function import generate_token,generate_userId,pagination
+from helper.function import pagination,generate_setup_id
 from helper.zSetupQuery import checkExist as setupExistQuery,insert as setupInsert,\
     queryListUsingSearch as setupListSearch,change as setupChange
 from itertools import islice
@@ -18,7 +18,7 @@ clientAdmin = [LevelRole.Admin.value,LevelRole.Manager.value]
 def setup_create(data: dict,current_user):
     filenames_create = "zsetup.json"
     date_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-    user_id = generate_userId()
+    setup_id = generate_setup_id()
     if check_File(filenames_create) is False:
         saveItem = filenames_create
         data2 = {}
@@ -29,7 +29,7 @@ def setup_create(data: dict,current_user):
         if check is not None:
             message = "Your Company Name or ID is Already exist in System"
             return success_request(message,200,check)
-        data['id'] = user_id
+        data['id'] = setup_id
         data['deleted'] = False
         data['activate'] = False
         data['created_date'] = date_time

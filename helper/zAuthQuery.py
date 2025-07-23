@@ -8,6 +8,31 @@ def saveDataFile(files):
     saves = save_data(filename,files)
     return saves
     
+# FOR GENERATE AUTH ID
+def checkCount():
+    dataList = loadDataFile()
+    totalData = len(dataList['zauth'])
+    return totalData
+
+def checkCountSequence(post: dict):
+    dataList = loadDataFile()
+    if post['year'] is not None :
+      filtered_data = list(filter(
+          lambda item:re.search(post['year'].lower(),item['id'].lower()), dataList['zauth']))
+    totalData = len(filtered_data)
+    return totalData
+
+def checkID(post: dict):
+    dataList = loadDataFile()
+    filtered_data = []
+    if "id" in post :
+        filtered_data = list(filter(
+        lambda item: item['id'] == post['id'] , dataList['zauth']))
+    totalData = len(filtered_data)
+    if len(totalData) > 0:
+        return False
+    return True
+
 def checkExist(post: dict):
     dataList = loadDataFile()
     filtered_data = []
@@ -37,8 +62,6 @@ def checkExist(post: dict):
         lambda item: item['email'] == post['email'] and item['id'] == post['id'] , dataList['zauth']))
     if "email" not in post or "username" not in post or "id" not in post :
         print("7")
-        return filtered_data
-    if not filtered_data:
         return filtered_data
     return filtered_data
 

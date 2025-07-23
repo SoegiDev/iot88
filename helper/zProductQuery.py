@@ -6,6 +6,32 @@ def loadDataFile(filename):
 def saveDataFile(filename,files):
     saves = save_data(filename,files)
     return saves
+
+# FOR GENERATE PRODUCT ID
+def checkCount(filename):
+    dataList = loadDataFile("product/"+filename)
+    totalData = len(dataList['zproduct'])
+    return totalData
+
+def checkCountSequence(post: dict,filename):
+    dataList = loadDataFile("product/"+filename)
+    if post['year'] is not None :
+      filtered_data = list(filter(
+          lambda item:re.search(post['year'].lower(),item['id'].lower()), dataList['zproduct']))
+    totalData = len(filtered_data)
+    return totalData
+
+def checkID(post: dict,filename):
+    dataList = loadDataFile("product/"+filename)
+    filtered_data = []
+    if "id" in post :
+        filtered_data = list(filter(
+        lambda item: item['id'] == post['id'] , dataList['zproduct']))
+    totalData = len(filtered_data)
+    if len(totalData) > 0:
+        return False
+    return True
+
     
 def checkExist(post: dict,filename):
     dataList = loadDataFile("product/"+filename)

@@ -3,7 +3,7 @@ from helper.files import check_File,save_data,check_dir
 from datetime import datetime
 from helper.enum import LevelRole
 from helper.responses import bad_request,success_request
-from helper.function import generate_token,generate_userId,pagination
+from helper.function import generate_token,generate_company_id,pagination
 from helper.zCompanyQuery import checkExist as comExistCheck,insert as comInsert,\
     queryListUsingSearch as comListSearch,change as comChange
 from .ZSetupController import setup_create
@@ -19,7 +19,7 @@ clientAdmin = [LevelRole.Admin.value]
 def company_create(data: dict,current_user):
     filenames_create = "zcompany.json"
     date_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-    user_id = generate_userId()
+    company_id = generate_company_id()
     if check_File(filenames_create) is False:
         saveItem = filenames_create
         data2 = {}
@@ -30,7 +30,7 @@ def company_create(data: dict,current_user):
         if check is not None:
             message = "Your Company Name or ID is Already exist in System"
             return success_request(message,200,check)
-        data['id'] = user_id
+        data['id'] = company_id
         data['deleted'] = False
         data['activate'] = False
         data['created_date'] = date_time

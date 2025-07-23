@@ -7,6 +7,32 @@ def saveDataFile(filename,files):
     saves = save_data(filename,files)
     return saves
     
+
+# FOR GENERATE OUTLET ID
+def checkCount(filename):
+    dataList = loadDataFile("outlet/"+filename)
+    totalData = len(dataList['zoutlet'])
+    return totalData
+
+def checkCountSequence(post: dict,filename):
+    dataList = loadDataFile("outlet/"+filename)
+    if post['year'] is not None :
+      filtered_data = list(filter(
+          lambda item:re.search(post['year'].lower(),item['id'].lower()), dataList['zoutlet']))
+    totalData = len(filtered_data)
+    return totalData
+
+def checkID(post: dict,filename):
+    dataList = loadDataFile("outlet/"+filename)
+    filtered_data = []
+    if "id" in post :
+        filtered_data = list(filter(
+        lambda item: item['id'] == post['id'] , dataList['zoutlet']))
+    totalData = len(filtered_data)
+    if len(totalData) > 0:
+        return False
+    return True
+
 def checkExist(post: dict,filename):
     dataList = loadDataFile("outlet/"+filename)
     if "store_name" in post :

@@ -3,7 +3,7 @@ from helper.files import check_File,save_data
 from datetime import datetime
 from helper.enum import LevelRole
 from helper.responses import bad_request,success_request
-from helper.function import generate_token,generate_userId,pagination
+from helper.function import pagination,generate_user_id
 from helper.zUserQuery import checkExist as userExistCheck,insert as userInsert,\
     change as userChange,queryListUsingSearch as userlistSearch
 from helper.zAuthQuery import checkExistUserId as authExistCheck
@@ -22,7 +22,7 @@ clientStaff = [LevelRole.Manager.value,LevelRole.Staff.value,LevelRole.Superviso
 def user_create(data: dict,current_user):
     filenames_create = "zuser.json"
     date_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-    user_id = generate_userId()
+    user_id = generate_user_id()
     if check_File(filenames_create) is False:
         saveItem = filenames_create
         data2 = {}

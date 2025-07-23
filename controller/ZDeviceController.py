@@ -1,6 +1,6 @@
 from datetime import datetime
-from helper.function import generate_device_id,generate_token,generate_key,pagination
-from helper.files import check_File,save_data,create_dir,get_listResources_files
+from helper.function import generate_token,generate_key,pagination,generate_device_id
+from helper.files import check_File,save_data,create_dir
 from helper.responses import bad_request,success_request
 from helper.zDeviceQuery import insert as deviceInsert,checkExist as deviceCheckExist,\
     change as deviceChange, queryListUsingSearch as devicelistSearch
@@ -43,12 +43,12 @@ def device_esl_create(post: dict, current_app):
         print(f"HasilCheck {check}")
         if check is not None:
             return bad_request("Your Mac Address was Registered",400)
-    id = generate_device_id()
     mac = post['mac_address'].replace(":", "")
     device : dict = {}
     key = generate_key()
+    ID = generate_device_id(fileStore)
     device['id'] = mac
-    device['device_id'] = id
+    device['device_id'] = ID
     device['device_name'] = mac
     device['device_category'] = "esl_"+post['device_board'] if 'device_board' in post else ""
     device['device_size'] = post['device_size'] if 'device_size' in post else ""

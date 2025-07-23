@@ -3,7 +3,7 @@ from helper.files import check_File,save_data,create_dir,get_listResources_files
 from datetime import datetime
 from helper.enum import LevelRole
 from helper.responses import bad_request,success_request
-from helper.function import generate_storeId,pagination
+from helper.function import pagination,generate_store_id
 from helper.zOutletQuery import checkExist as outletCheckExist,\
     insert as outletInsert, queryListUsingSearch as outletListSearch,\
         change as outletChange
@@ -24,8 +24,6 @@ def outlet_create(post: dict,current_user):
         return bad_request("Company mandatory not Found ",400)
     filenames_create = "outlet/"+"outlet"+post['company_id']+".json"
     Cid = post['company_id'][-12:]
-    outlet_id = generate_storeId(Cid)
-   
     if check_File(filenames_create) is False:
         saveItem = filenames_create
         data2 = {}
@@ -37,6 +35,7 @@ def outlet_create(post: dict,current_user):
         if check is not None:
             message = "Your Company Name or ID is Already exist in System"
             return success_request(message,200,None)
+        outlet_id = generate_store_id(fileStore)
         post['id'] = outlet_id
         post['deleted'] = False
         post['activate'] = False

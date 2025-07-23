@@ -1,0 +1,16 @@
+{
+  "zoutlet": [
+    {
+      "company_id": "QF3GQ2025-00001",
+      "store_name": "Toko Permata 1",
+      "store_email": "tokopermata1@email.com",
+      "store_address": "asldjsakdjkajs",
+      "id": "STORE-6N8R92025-00001",
+      "deleted": false,
+      "activate": false,
+      "created_date": "2025-07-19 20:25:06",
+      "last_updated": "2025-07-19 20:25:06",
+      "created_by": "admin_super"
+    }
+  ]
+}

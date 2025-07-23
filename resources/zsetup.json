@@ -1,49 +1,16 @@
 {
   "zset": [
     {
-      "company_name": "PT. Matahari Store. tbk",
-      "company_address": "Jalan Semenanjung Blok d4 no2 Jakarta",
-      "company_email": "matahari@mallmatahari.com",
+      "company_name": "PT. Artemedia tbk",
+      "company_address": "JL. Setiabudi Bangung Barat",
+      "company_email": "support@artemedia.com",
       "company_sector": "",
       "send_email": false,
-      "level": 0,
-      "backup": false,
-      "deep_sleep": false,
-      "id": "202506.3015.3124.b8c8dc0d-9bba-43e3-9da6-fef5ddec2d8d",
+      "id": "VFPUR2025-00001",
       "deleted": false,
       "activate": false,
-      "created_date": "2025-06-30 15:31:24",
-      "last_updated": "2025-06-30 15:31:24"
-    },
-    {
-      "company_name": "PT. FAMILY MART INDONESIA",
-      "company_address": "JL. HALIMUN JAKARTA",
-      "company_email": "fams@email.com",
-      "company_sector": "",
-      "send_email": false,
-      "level": 0,
-      "backup": false,
-      "deep_sleep": false,
-      "id": "202507.0110.0213.a184ce7d-bc6b-4a64-a2f8-eeb96f64b3f7",
-      "deleted": false,
-      "activate": false,
-      "created_date": "2025-07-01 10:02:13",
-      "last_updated": "2025-07-01 10:02:13"
-    },
-    {
-      "company_name": "PT. Harus Memulai dan Berani",
-      "company_address": "Bekasi Raya",
-      "company_email": "berani@email.com",
-      "company_sector": "",
-      "send_email": false,
-      "level": 0,
-      "backup": false,
-      "deep_sleep": false,
-      "id": "202507.1510.2425.417bd",
-      "deleted": false,
-      "activate": false,
-      "created_date": "2025-07-15 10:24:25",
-      "last_updated": "2025-07-15 10:24:25"
+      "created_date": "2025-07-19 13:00:05",
+      "last_updated": "2025-07-19 13:00:05"
     }
   ]
 }

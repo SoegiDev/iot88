@@ -2,61 +2,46 @@
   "zauth": [
     {
       "username": "admin_super",
-      "password": "gAAAAABoYkBHiVtDy_spUCISGlR9jnDF3y-0gnfOQUidO5Ae-ebEJYafCO7DzwHSr2Q8MlVirukihI3mZqTBBMwYXtXerUIcHg==",
+      "password": "gAAAAABoey0oicHTqBiQxAeNGE7wCE1TwQN9FzFF006qCYuJcm-QpATPYn5cLlWU57vnfnrogdJvcgIpc4hkulTq4q_3QzsrwA==",
       "email": "adminsuper@admin.com",
       "role": "superadmin",
-      "id": "202506.1815.2608.f35b046c-b6fc-49cb-911e-c31d8f850616",
+      "id": "HCPKO2025-00001",
       "loggedIn": true,
       "deleted": false,
       "activate": true,
       "access_login": true,
-      "created_date": "2025-06-18 15:26:08",
-      "last_updated": "2025-07-15 12:33:49",
-      "updated_by": "admin_super",
-      "code": 200,
-      "message": "Successfully Login"
+      "created_date": "2025-07-19 12:29:12",
+      "last_updated": "2025-07-20 15:44:47",
+      "updated_by": "admin_super"
     },
     {
-      "username": "admin_super_2",
-      "password": "gAAAAABoUnnkHCjJbDGCz_0NvLuI59MUWQ0QTuHcOaebhGYQKFtyxrtvqXHOjDWK36y-YHhSJAUDnL97RR4MI7h61fj3rrwGEg==",
-      "email": "adminsuper2@admin.com",
-      "role": "superadmin",
-      "id": "202506.1815.3340.fbe150a8-0a4a-4af4-be85-b50b9065da4f",
+      "user_id": "USR-FCQJF2025-00001",
+      "username": "admin_jajang",
+      "email": "adminjajang@gmail.com",
+      "role": "admin",
+      "id": "UDZ562025-00003",
       "loggedIn": true,
       "deleted": false,
       "activate": true,
       "access_login": true,
-      "created_date": "2025-06-18 15:33:40",
-      "last_updated": "2025-06-19 15:41:12",
-      "updated_by": "admin_super_2"
+      "password": "gAAAAABofKxmGyQBvk9yPyYV7rVMFpJRTtOogM5-C2TmeORFec6UBIdEfy-7Kycj9sC6Dq-zX0pnBvPhSKJQ1eoPAs6gh6Vm7A==",
+      "created_date": "2025-07-20 15:44:22",
+      "last_updated": "2025-07-20 16:19:30",
+      "updated_by": "admin_jajang"
     },
     {
-      "username": "admin_super_3",
-      "password": "gAAAAABoUqgGrTkxGJ1e1rX5Z1z0qAEnIxwxW4sPtxkoYT8EC5-QL09EI92x6AXd_9lreuNqC4jGDqsc02RhZTXT1_6i3BD6Yw==",
-      "email": "adminsuper3@admin.com",
-      "role": "superadmin",
-      "id": "202506.1818.5030.e7db3a4c-60fa-4d70-b8fb-ff59326fcee4",
+      "user_id": "USR-2G7EX2025-00002",
+      "username": "manager1",
+      "email": "manager@gmail.com",
+      "role": "manager",
+      "id": "2MZCY2025-00004",
       "loggedIn": false,
       "deleted": false,
       "activate": false,
       "access_login": true,
-      "created_date": "2025-06-18 18:50:30",
-      "last_updated": "2025-06-18 18:50:30"
-    },
-    {
-      "user_id": "202507.1510.2811.888d7",
-      "username": "admin_jajang",
-      "email": "admin@email.com",
-      "role": "admin",
-      "id": "202507.1510.2811.7bb5e",
-      "loggedIn": false,
-      "deleted": false,
-      "activate": true,
-      "access_login": true,
-      "password": "gAAAAABodcrLNcVbwkB2_xu97jhiSf20p5TiyVHAnA7SaSHS--_s12C9mTd8jDJkjno3t0HiE_O-G1udmWCV0wXR1ktSxZdk2Q==",
-      "created_date": "2025-07-15 10:28:11",
-      "last_updated": "2025-07-15 10:28:19",
-      "updated_by": "admin_super"
+      "password": "gAAAAABofK9ozquPZcxN8eBJW_r_IGNRjOdxr4ReTOazengTUE5iU1eh6hA2HLuFdvaJ0NFKAtqTId4cSMYEEYF_OeTAANLnGA==",
+      "created_date": "2025-07-20 15:57:12",
+      "last_updated": "2025-07-20 15:57:12"
     }
   ]
 }

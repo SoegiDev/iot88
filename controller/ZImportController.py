@@ -6,7 +6,7 @@ from datetime import datetime
 from helper.enum import LevelRole
 from werkzeug.utils import secure_filename
 from helper.responses import bad_request,success_request
-from helper.function import generate_token,generate_userId,pagination,generate_storeId,generate_productId
+from helper.function import generate_auth_id,generate_product_id,generate_store_id
 from helper.zOutletQuery import insert as outletInsert,checkExist as outletCheckExist
 from helper.zUserQuery import checkExist as userExistCheck,insert as userInsert
 from helper.zDeviceQuery import change as deviceChange
@@ -98,7 +98,7 @@ def add_importUser(company_id,current_user):
             raw['activate'] = False
             raw['deleted'] = False
             raw["loggedIn"] = False
-            raw['id'] = generate_userId()
+            raw['id'] = generate_auth_id()
             raw['created_date'] = date_time
             raw['last_updated'] = date_time
             setToList.append(raw)
@@ -282,7 +282,7 @@ def save_importStore(company_id,file_xls,file_json,current_user):
         if check :
             continue
         Cid = company_id[-12:]
-        outlet_id = generate_storeId(Cid)
+        outlet_id = generate_store_id(fileStore)
         post['company_id'] = company_id
         post['store_id'] = io['store_name']
         post['store_name'] = io['store_name'] 
@@ -339,7 +339,7 @@ def save_importProduct(company_id,file_xls,file_json,current_user):
             filenames_create = "product/"+"product"+store['store_id']+".json"
             Cid = store['company_id'][-6:]
             Sid = store['store_id'][-5:]
-            product_id = generate_productId(Cid,Sid)
+            product_id = generate_product_id(filenames_create)
             if check_File(filenames_create) is False:
                 saveItem = filenames_create
                 data2 = {}

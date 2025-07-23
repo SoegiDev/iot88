@@ -3,7 +3,7 @@ from helper.files import check_File,save_data,create_dir,get_listResources_files
 from datetime import datetime
 from helper.enum import LevelRole
 from helper.responses import bad_request,success_request
-from helper.function import generate_productId,pagination
+from helper.function import generate_product_id,pagination
 from helper.zProductQuery import checkExist as productCheckExist,\
     insert as productInsert,queryListUsingSearch as productListSearch,\
         change as productChange
@@ -28,7 +28,7 @@ def product_create(post: dict,current_user):
         filenames_create = "product/"+"product"+store['store_id']+".json"
         Cid = store['company_id'][-6:]
         Sid = store['store_id'][-5:]
-        product_id = generate_productId(Cid,Sid)
+        
         if check_File(filenames_create) is False:
             saveItem = filenames_create
             data2 = {}
@@ -39,7 +39,7 @@ def product_create(post: dict,current_user):
             check = productCheckExist(post,fileStore)
             if check is not None:
                 continue
-            post['id'] = product_id
+            post['id'] = generate_product_id(fileStore)
             post['deleted'] = False
             post['activate'] = False
             post['created_date'] = date_time

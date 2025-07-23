@@ -8,6 +8,32 @@ def saveDataFile(filename,files):
     saves = save_data(filename,files)
     return saves
     
+    
+# FOR GENERATE SETUP ID
+def checkCount(filename):
+    dataList = loadDataFile("device_esl/"+filename)
+    totalData = len(dataList['zESL'])
+    return totalData
+
+def checkCountSequence(post: dict,filename):
+    dataList = loadDataFile("device_esl/"+filename)
+    if post['year'] is not None :
+      filtered_data = list(filter(
+          lambda item:re.search(post['year'].lower(),item['id'].lower()), dataList['zESL']))
+    totalData = len(filtered_data)
+    return totalData
+
+def checkID(post: dict,filename):
+    dataList = loadDataFile("device_esl/"+filename)
+    filtered_data = []
+    if "id" in post :
+        filtered_data = list(filter(
+        lambda item: item['id'] == post['id'] , dataList['zESL']))
+    totalData = len(filtered_data)
+    if len(totalData) > 0:
+        return False
+    return True
+
 def checkExist(post: dict,filename):
     dataList = loadDataFile("device_esl/"+filename)
     print(f"Post {post}")
