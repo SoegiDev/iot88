@@ -37,7 +37,7 @@
       "live_date": "2025-07-20 17:29:15",
       "live_end": "2025-07-20 17:29:15",
       "created_date": "2025-07-20 17:29:15",
-      "last_updated": "2025-07-20 17:50:57",
+      "last_updated": "2025-07-24 13:42:19",
       "created_by": "hardware",
       "template": 1,
       "content_header1": "Header 1 (17)",
@@ -49,7 +49,9 @@
       "content_footer_right": "100gr",
       "content_footer_center_sub": "2024-10-20",
       "content_footer_right_sub": "Stock: 12",
-      "device_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IkM0RDhENTJDRjEwNiIsInJvbGUiOiJkZXZpY2VfRVNMIiwiZXhwIjoxNzU0ODA3MzU1LCJleHBEYXRlIjoiMjAyNS0xMC0xOCAxNzoyOToxNS4wNjk3ODgifQ.dAJQn4ZvYRO--2jiXly6GSbPZExsR9Zzl2n86A8dJV4"
+      "device_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IkM0RDhENTJDRjEwNiIsInJvbGUiOiJkZXZpY2VfRVNMIiwiZXhwIjoxNzU0ODA3MzU1LCJleHBEYXRlIjoiMjAyNS0xMC0xOCAxNzoyOToxNS4wNjk3ODgifQ.dAJQn4ZvYRO--2jiXly6GSbPZExsR9Zzl2n86A8dJV4",
+      "code": 200,
+      "message": "Data Updated"
     }
   ]
 }
