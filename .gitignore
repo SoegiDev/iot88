@@ -13,3 +13,5 @@ resources/zsetup.json
 resources/zuser.json
 resources/zauth.json
 resources/log_update.json
+uploads/
+uploads_temp/
