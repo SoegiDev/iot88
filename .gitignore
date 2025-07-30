@@ -1,8 +1,8 @@
 envV1*
 __pycache__*
-/controller/__pycache__*
-/helper/__pycache__*
-/decorators/__pycache__*
+controller/__pycache__*
+helper/__pycache__*
+decorators/__pycache__*
 pytest_cache*
 logs*
 resources/device_esl
@@ -12,3 +12,4 @@ resources/zcompany.json
 resources/zsetup.json
 resources/zuser.json
 resources/zauth.json
+resources/log_update.json
