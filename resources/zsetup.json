@@ -1,0 +1,34 @@
+{
+  "zset": [
+    {
+      "company_name": "PT. Sampoerna",
+      "company_address": "Bekasi Raya",
+      "company_email": "sampoerna@email.com",
+      "company_sector": "",
+      "send_email": false,
+      "level": 0,
+      "backup": false,
+      "deep_sleep": false,
+      "id": "1RK6Y2025-00001",
+      "deleted": false,
+      "activate": false,
+      "created_date": "2025-07-30 17:56:10",
+      "last_updated": "2025-07-30 17:56:10"
+    },
+    {
+      "company_name": "PT. Djarum Super",
+      "company_address": "Jawa Tengah",
+      "company_email": "djarum@email.com",
+      "company_sector": "",
+      "send_email": false,
+      "level": 0,
+      "backup": false,
+      "deep_sleep": false,
+      "id": "CFKYI2025-00002",
+      "deleted": false,
+      "activate": false,
+      "created_date": "2025-08-01 17:57:44",
+      "last_updated": "2025-08-01 17:57:44"
+    }
+  ]
+}

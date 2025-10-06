@@ -6,12 +6,12 @@ decorators/__pycache__*
 pytest_cache*
 logs*
 resources/device_esl
-resources/outlet
-resources/product
-resources/zcompany.json
-resources/zsetup.json
-resources/zuser.json
-resources/zauth.json
+# resources/outlet
+# resources/product
+# resources/zcompany.json
+# resources/zsetup.json
+# resources/zuser.json
+# resources/zauth.json
 resources/log_update.json
 uploads/
 uploads_temp/

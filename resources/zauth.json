@@ -1,0 +1,33 @@
+{
+  "zauth": [
+    {
+      "username": "admin_super",
+      "password": "gAAAAABoidYVeGXI70apkZP9YkUH2sNCnMk6mIJZHZKXi7JJcZt1573JZkycOhJhMqX4fvjNPnQXWa1EryhzPWA9-GQBu170cQ==",
+      "email": "admin_super@admin.com",
+      "role": "superadmin",
+      "id": "X4HMK2025-00001",
+      "loggedIn": true,
+      "deleted": false,
+      "activate": true,
+      "access_login": true,
+      "created_date": "2025-07-30 15:21:41",
+      "last_updated": "2025-08-02 08:58:42",
+      "updated_by": "admin_super"
+    },
+    {
+      "user_id": "USR-4JXX42025-00001",
+      "username": "admin_pusat",
+      "email": "admin_pusat_arte@email.com",
+      "role": "admin",
+      "id": "R1HYS2025-00002",
+      "loggedIn": true,
+      "deleted": false,
+      "activate": true,
+      "access_login": true,
+      "password": "gAAAAABoigLVz7sLXy7OMsopwMU2C8ijmc9L28j4mgRaNsgmLQU5TqYDYWiLYU6anGp1c_CDmmdEzgLyJlLyOt5sssV5JbNHVA==",
+      "created_date": "2025-07-30 18:32:37",
+      "last_updated": "2025-07-30 21:01:58",
+      "updated_by": "admin_pusat"
+    }
+  ]
+}

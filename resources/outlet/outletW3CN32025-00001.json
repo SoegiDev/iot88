@@ -1,0 +1,16 @@
+{
+  "zoutlet": [
+    {
+      "company_id": "W3CN32025-00001",
+      "store_name": "Bekasi 1",
+      "store_email": "bekasi1@email.com",
+      "store_address": "Bekasi",
+      "id": "STORE-XAUBE2025-00001",
+      "deleted": false,
+      "activate": false,
+      "created_date": "2025-07-30 17:56:37",
+      "last_updated": "2025-07-30 17:56:37",
+      "created_by": "admin_super"
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "zproduct": [
+    {
+      "supplier_id": "Supplier ID",
+      "supplier_name": "Supplier Name",
+      "sku": "3912738127317",
+      "location": {
+        "zone": "1",
+        "aisle": "",
+        "section": "",
+        "position": "",
+        "level": "",
+        "rack": "",
+        "color": ""
+      },
+      "size": {
+        "weight": "",
+        "height": "",
+        "width": "",
+        "dimension": "",
+        "color": "",
+        "uom": ""
+      },
+      "item_name": "Marlboro Light 20",
+      "item_desc": "",
+      "item_text": "ITEM TEXT",
+      "item_category": "Rokok",
+      "item_price": "55000",
+      "item_price_disc": "0",
+      "item_disc_status": false,
+      "item_disc": "0",
+      "item_image": "",
+      "item_active": false,
+      "item_qris": "https://www.google.com",
+      "item_qris_status": false,
+      "id": "ITEM-2025-00001",
+      "deleted": false,
+      "activate": false,
+      "created_date": "2025-07-30 21:02:36",
+      "last_updated": "2025-07-30 21:02:36",
+      "created_by": "admin_pusat"
+    }
+  ]
+}

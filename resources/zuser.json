@@ -1,0 +1,43 @@
+{
+  "zuser": [
+    {
+      "company_id": "W3CN32025-00001",
+      "username": "admin_pusat",
+      "fullname": "Admin",
+      "email": "admin_pusat_arte@email.com",
+      "password": "gAAAAABoigLVz7sLXy7OMsopwMU2C8ijmc9L28j4mgRaNsgmLQU5TqYDYWiLYU6anGp1c_CDmmdEzgLyJlLyOt5sssV5JbNHVA==",
+      "role": "admin",
+      "access_login": true,
+      "store": [],
+      "id": "USR-4JXX42025-00001",
+      "employee_code": "",
+      "employee_email": "",
+      "send_email": false,
+      "access_admin": true,
+      "access_module": [],
+      "deleted": false,
+      "created_date": "2025-07-30 18:32:37",
+      "last_updated": "2025-07-30 21:01:58",
+      "created_by": "admin_super",
+      "auth_account": {
+        "access_login": true,
+        "activate": true,
+        "created_date": "2025-07-30 18:32:37",
+        "deleted": false,
+        "email": "admin_pusat_arte@email.com",
+        "id": "R1HYS2025-00002",
+        "last_updated": "2025-07-30 18:32:37",
+        "loggedIn": false,
+        "password": "gAAAAABoigLVz7sLXy7OMsopwMU2C8ijmc9L28j4mgRaNsgmLQU5TqYDYWiLYU6anGp1c_CDmmdEzgLyJlLyOt5sssV5JbNHVA==",
+        "role": "admin",
+        "user_id": "USR-4JXX42025-00001",
+        "username": "admin_pusat"
+      },
+      "code": 200,
+      "message": "Data Updated",
+      "updated_by": "admin_pusat",
+      "activate": true,
+      "loggedIn": true
+    }
+  ]
+}
