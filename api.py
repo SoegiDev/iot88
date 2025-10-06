@@ -35,7 +35,7 @@ def sleep_mode():
     return "<p>SLEEP MODE</p>"
 
 @app.route("/sleepmode")
-def sleep_mode():
+def sleep_modeOn():
     return "<p>SLEEP MODE ONE</p>"
 
 @app.route("/initial")

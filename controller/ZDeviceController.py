@@ -110,7 +110,7 @@ def esl_get_token(post: dict,current_app):
     years = datetime.now().strftime('%Y')
     id = post['id'].replace(":", "")
     sendPost = {"id":id}
-    fileStore = "device"+years+".json"
+    fileStore = "device.json"
     getDevice = deviceCheckExist(sendPost,fileStore)
     if getDevice is None:
         message = f"Data Not Found"

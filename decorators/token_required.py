@@ -21,7 +21,7 @@ def token_required(f):
             # get_data = None
             if(data['role']=="device_ESL"):
                 years = datetime.now().strftime('%Y')
-                filenames_create = "device"+years+".json"
+                filenames_create = "device.json"
                 postdata = {}
                 postdata['id'] = data['id']
                 getData = deviceCheck(postdata,filenames_create)
