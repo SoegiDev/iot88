@@ -29,7 +29,7 @@ def company_create(data: dict,current_user):
         check = comExistCheck(data)
         if check is not None:
             message = "Your Company Name or ID is Already exist in System"
-            return success_request(message,200,check)
+            return bad_request(message,200)
         data['id'] = company_id
         data['deleted'] = False
         data['activate'] = False
@@ -40,7 +40,7 @@ def company_create(data: dict,current_user):
     #return success_request("Successfully",200,None)
 
 def company_list_search (post_data: dict, current_user):
-    per_page = 10
+    per_page = 1
     if check_File("zcompany.json") is False:
         total_data = 0
         page = 0 
@@ -63,6 +63,7 @@ def company_list_search (post_data: dict, current_user):
     return success_request("Succesfully Get Data",200,result)
 
 def company_show(post: dict,current_user):
+    print(f"Company Show {post}")
     getCompany = comExistCheck(post)
     company = getCompany[0]
     return success_request("Data Updated",200,data=company)

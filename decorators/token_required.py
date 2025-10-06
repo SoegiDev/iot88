@@ -27,8 +27,10 @@ def token_required(f):
                 getData = deviceCheck(postdata,filenames_create)
                 get_data = getData[0] if getData is not None else None
             else:
-                getUser = authCheck(data)[0] if authCheck(data) is not None else None
-                get_data = auth_profile_token(getUser) if getUser is not None else None
+                getAuth = authCheck(data)[0] if authCheck(data) is not None else None
+                get_data = auth_profile_token(getAuth) if getAuth is not None else None
+                if getAuth['activate'] == False:
+                    return bad_request("Your Account not Active",401)
            # print(f"from token {get_data}")
         except jwt.ExpiredSignatureError:
             #abort(bad_request("Invalid Authorize!", 401))

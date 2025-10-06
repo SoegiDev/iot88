@@ -165,8 +165,10 @@ def user_to_authRegister(post: dict,current_user):
         data['created_date'] = date_time
         data['last_updated'] = date_time
         authInsert(data)
+        print(f"USER POST {post}")
         user = userExistCheck(post)
-        userData = user[0]
+        print(f"USER {user}")
+        userData = {}
         userData['auth_account'] = data
         userChange(post['id'],userData,date_time)
     return success_request("Successfully",200,None)
@@ -252,6 +254,7 @@ def auth_profile_token(auth):
         postUser['id'] = auth['user_id'] 
         getUser = userExistCheck(postUser)
     if getUser:
+        print("ADA USER")
         user = getUser[0]
         if "company_id" not in user:
             user['company'] = {}

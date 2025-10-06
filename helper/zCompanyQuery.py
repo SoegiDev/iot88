@@ -12,6 +12,7 @@ def saveDataFile(files):
 def checkCount():
     dataList = loadDataFile()
     totalData = len(dataList['zcom'])
+    print(totalData)
     return totalData
 
 def checkCountSequence(post: dict):
@@ -35,7 +36,8 @@ def checkID(post: dict):
 
 def checkExist(post: dict):
     dataList = loadDataFile()
-    if "company_name" in post :
+    filtered_data = []
+    if "company_name" in post:
         print("1")
         filtered_data = list(filter(
         lambda item: item['company_name'] == post['company_name'], dataList['zcom']))
@@ -49,12 +51,13 @@ def checkExist(post: dict):
 
 def queryListUsingSearch(post: dict):
     dataList = loadDataFile()
+    filtered_data = []
     if  post['query'] is not None :
         print("1")
         filtered_data = list(filter(
         lambda item:re.search(post['query'].lower(),item['company_name'].lower()) or re.search(post['query'].lower(),item['company_email'].lower()), dataList['zcom']))
     if post['query'] is None :
-        print("3")
+        print("2")
         return dataList['zcom']
     if not filtered_data:
         return None

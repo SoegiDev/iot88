@@ -36,33 +36,20 @@ def checkID(post: dict):
 def checkExist(post: dict):
     dataList = loadDataFile()
     filtered_data = []
-    if "username" in post :
-        print("1")
+    if "username" in post:
+        print(f"Auth 1")
         filtered_data = list(filter(
         lambda item: item['username'] == post['username'], dataList['zauth']))
-    if "email" in post :
-        print(f"2")
+    if "email" in post:
+        print(f"Auth 2")
         filtered_data = list(filter(
         lambda item: item['email'] == post['email'] , dataList['zauth']))
     if "id" in post :
-        print("3")
+        print(f"Auth 3")
         filtered_data = list(filter(
         lambda item: item['id'] == post['id'] , dataList['zauth']))
-    if "username" in post and "email" in post :
-        print("4")
-        filtered_data = list(filter(
-        lambda item: item['email'] == post['email'] and item['username'] == post['username'] , dataList['zauth']))
-    if "username" in post and "id" in post :
-        print("5")
-        filtered_data = list(filter(
-        lambda item: item['id'] == post['id'] and item['username'] == post['username'] , dataList['zauth']))
-    if "id" in post and "email" in post :
-        print("6")
-        filtered_data = list(filter(
-        lambda item: item['email'] == post['email'] and item['id'] == post['id'] , dataList['zauth']))
-    if "email" not in post or "username" not in post or "id" not in post :
-        print("7")
-        return filtered_data
+    if not filtered_data:
+        return None
     return filtered_data
 
 def checkExistUserId(post: dict):

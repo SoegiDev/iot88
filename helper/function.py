@@ -3,6 +3,7 @@ from uuid import uuid4
 import string
 import random
 import jwt
+from helper.files import check_File
 from .zProductQuery import checkCount as productCount,checkCountSequence as productSeq
 from .zAuthQuery import checkCount as authCount, checkCountSequence as authSeq
 from .zCompanyQuery import checkCount as comCount, checkCountSequence as comSeq
@@ -19,11 +20,11 @@ eventid
 def generate_auth_id():
     next_sequence = 0
     get_year = datetime.now().strftime('%Y')
-    next_sequence = authCount()+1
-    if authCount() > 0:
-        seq = {}
-        seq['year'] = get_year
-        next_sequence = authSeq(seq)+1
+    filenames_create = "zauth.json"
+    if check_File(filenames_create) is False:
+        next_sequence = 1
+    else:
+        next_sequence = authCount()+1
     # Pad the sequence number with leading zeros (e.g., 00001)
     padded_sequence = str(next_sequence).zfill(5)
     #prefix = "ITEM-"
@@ -36,11 +37,11 @@ def generate_auth_id():
 def generate_company_id():
     next_sequence = 0
     get_year = datetime.now().strftime('%Y')
-    next_sequence = comCount()+1
-    if comCount() > 0:
-        seq = {}
-        seq['year'] = get_year
-        next_sequence = comSeq(seq)+1
+    filenames_create = "zcompany.json"
+    if check_File(filenames_create) is False:
+        next_sequence = 1
+    else:
+        next_sequence = comCount()+1
     # Pad the sequence number with leading zeros (e.g., 00001)
     padded_sequence = str(next_sequence).zfill(5)
     #prefix = "ITEM-"
@@ -53,11 +54,11 @@ def generate_company_id():
 def generate_setup_id():
     next_sequence = 0
     get_year = datetime.now().strftime('%Y')
-    next_sequence = setupCount()+1
-    if setupCount() > 0:
-        seq = {}
-        seq['year'] = get_year
-        next_sequence = setupSeq(seq)+1
+    filenames_create = "zsetup.json"
+    if check_File(filenames_create) is False:
+        next_sequence = 1
+    else:
+        next_sequence = setupCount()+1
     # Pad the sequence number with leading zeros (e.g., 00001)
     padded_sequence = str(next_sequence).zfill(5)
     #prefix = "ITEM-"
@@ -70,11 +71,11 @@ def generate_setup_id():
 def generate_user_id():
     next_sequence = 0
     get_year = datetime.now().strftime('%Y')
-    next_sequence = userCount()+1
-    if userCount() > 0:
-        seq = {}
-        seq['year'] = get_year
-        next_sequence = userSeq(seq)+1
+    filenames_create = "zuser.json"
+    if check_File(filenames_create) is False:
+        next_sequence = 1
+    else:
+        next_sequence = setupCount()+1
     # Pad the sequence number with leading zeros (e.g., 00001)
     padded_sequence = str(next_sequence).zfill(5)
     #prefix = "ITEM-"
@@ -87,11 +88,10 @@ def generate_user_id():
 def generate_store_id(fileName):
     next_sequence = 0
     get_year = datetime.now().strftime('%Y')
-    next_sequence = storeCount(fileName)+1
-    if storeCount(fileName) > 0:
-        seq = {}
-        seq['year'] = get_year
-        next_sequence = storeSeq(seq,fileName)+1
+    if check_File(fileName) is False:
+        next_sequence = 1
+    else:
+        next_sequence = storeCount(fileName)+1
     # Pad the sequence number with leading zeros (e.g., 00001)
     padded_sequence = str(next_sequence).zfill(5)
     #prefix = "ITEM-"
@@ -104,11 +104,10 @@ def generate_store_id(fileName):
 def generate_product_id(fileName):
     next_sequence = 0
     get_year = datetime.now().strftime('%Y')
-    next_sequence = productCount(fileName)+1
-    if productCount(fileName) > 0:
-        seq = {}
-        seq['year'] = get_year
-        next_sequence = productSeq(seq,fileName)+1
+    if check_File(fileName) is False:
+        next_sequence = 1
+    else:
+        next_sequence = productCount(fileName)+1
     # Pad the sequence number with leading zeros (e.g., 00001)
     padded_sequence = str(next_sequence).zfill(5)
     prefix = "ITEM-"
@@ -120,11 +119,10 @@ def generate_product_id(fileName):
 def generate_device_id(fileName):
     next_sequence = 0
     get_year = datetime.now().strftime('%Y')
-    next_sequence = deviceCount(fileName)+1
-    if deviceCount(fileName) > 0:
-        seq = {}
-        seq['year'] = get_year
-        next_sequence = deviceSeq(seq,fileName)+1
+    if check_File(fileName) is False:
+        next_sequence = 1
+    else:
+        next_sequence = deviceCount(fileName)+1
     # Pad the sequence number with leading zeros (e.g., 00001)
     padded_sequence = str(next_sequence).zfill(5)
     prefix = generate_random_string(5)

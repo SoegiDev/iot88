@@ -50,6 +50,13 @@ def check_File(file_path: str) -> bool:
         return True
     else:
         return False
+    
+def check_FileLog(file_path: str) -> bool:
+    dirs = "logs/"
+    if os.path.isfile(os.path.join(dirs,file_path)) and os.access(os.path.join(dirs,file_path), os.R_OK):
+        return True
+    else:
+        return False
 
 def check_dir(dir: str) ->bool:
     check = False

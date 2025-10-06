@@ -2,6 +2,7 @@ import logging
 import functools
 from flask import request
 import json
+from helper.files import create_dir
 
 def _generate_log(path,status = 0):
     """
@@ -72,6 +73,7 @@ def add_log():
                 results_function = func(*args,**kwargs)
                 Hasil = results_function.data.decode("utf-8")
                 values = f"Info -cls={func.__name__}|args={args_params}|kwargs={kwargs_params}|Result={Hasil}-"
+                create_dir("logs")
                 if results_function.status_code not in codeOk:
                     logger = _generate_log(path,2)
                     logger.warning(values)

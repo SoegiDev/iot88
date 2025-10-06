@@ -27,15 +27,14 @@ def deviceHome(post: dict,current_user):
 def device_esl_create(post: dict, current_app):
     create_dir("resources/device_esl")
     date_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-    years = datetime.now().strftime('%Y')
-    filenames_create = "device_esl/"+"device"+years+".json"
+    filenames_create = "device_esl/"+"device.json"
     if check_File(filenames_create) is False:
         saveItem = filenames_create
         data2 = {}
         data2["zESL"] = []
         save_data(saveItem,data2)
     if check_File(filenames_create) is True:
-        fileStore = "device"+years+".json"
+        fileStore = "device.json"
         mac = post['mac_address'].replace(":", "")
         device : dict = {}
         device['id'] = mac
@@ -125,7 +124,7 @@ def esl_sync(post: dict, current_user):
     date_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     years = datetime.now().strftime('%Y')
     sendPost = {"id":current_user['id']}
-    fileStore = "device"+years+".json"
+    fileStore = "device.json"
     getDevice = deviceCheckExist(sendPost,fileStore)
     if getDevice is None:
         message = f"Data Not Found"
@@ -147,7 +146,7 @@ def esl_product(current_user):
     date_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     years = datetime.now().strftime('%Y')
     sendPost = {"id":current_user['id']}
-    fileStore = "device"+years+".json"
+    fileStore = "device.json"
     getDevice = deviceCheckExist(sendPost,fileStore)
     if getDevice is None:
         message = f"Data Not Found"
@@ -160,7 +159,7 @@ def esl_content(current_user):
     date_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     years = datetime.now().strftime('%Y')
     sendPost = {"id":current_user['id']}
-    fileStore = "device"+years+".json"
+    fileStore = "device.json"
     getDevice = deviceCheckExist(sendPost,fileStore)
     if getDevice is None:
         message = f"Data Not Found"
@@ -183,8 +182,8 @@ def esl_content(current_user):
 def esl_ListSearch(post_data: dict, current_user):
     date_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     years = datetime.now().strftime('%Y')
-    fileStore = "device"+years+".json"
-    per_page = 10
+    fileStore = "device.json"
+    per_page = 12
     ListData = []
     if check_File("device_esl/"+fileStore) is False:
         total_data = 0
@@ -215,6 +214,9 @@ def esl_ListSearch(post_data: dict, current_user):
             data_["client_store_name"] = getOutlet[0]['store_name']
         ListData.append(data_)
     ListSearch = ListData
+    total_data = 0 if ListSearch is None else len(ListSearch)
+    page = 0 if post_data['page'] is None else post_data['page'] 
+    getPage = pagination(page,total_data,per_page)
     if post_data['query'] != "":
         ListSearch = list(filter(
             lambda item:re.search(post_data['query'].lower(),item['client_owner_name'].lower()) or 
@@ -226,7 +228,7 @@ def esl_ListSearch(post_data: dict, current_user):
 def esl_show(post: dict,current_user):
     date_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     years = datetime.now().strftime('%Y')
-    fileStore = "device"+years+".json"
+    fileStore = "device.json"
     getESL = deviceCheckExist(post,fileStore)
     if getESL is None:
         message = f"Data Not Found"
@@ -245,7 +247,7 @@ def esl_show(post: dict,current_user):
 def esl_change(post: dict,current_user):
     date_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     years = datetime.now().strftime('%Y')
-    fileStore = "device"+years+".json"
+    fileStore = "device.json"
     deviceChange(post['id'],post,fileStore,date_time)
     return success_request("Data Updated",200,data=None)
 # # #RETRIEVE FROM WEB
